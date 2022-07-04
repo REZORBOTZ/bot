@@ -1,19 +1,19 @@
 /**
-	@ No Re Upload, recode sendiri base nya klo mau 😏
-	@ Sc no enc silahkan cek https://github.com/DikaArdnt/alpha-Morou
- 
-	 「 TqTo 」
-	@ My God
-	@ My Parents
-	@ Fatih A.
-	@ Ferdi
-	@ DikaArdnt [author]
-	@ Mhankbarbar
-	@ Nurutomo
-	@ Rashid
-	@ ZeeoneOfc
-	@ Penyedia Module
-	@ And All Support
+@ No Re Upload, recode sendiri base nya klo mau 😏
+@ Sc no enc silahkan cek https://github.com/DikaArdnt/alpha-Morou
+
+「 TqTo 」
+@ My God
+@ My Parents
+@ Fatih A.
+@ Ferdi
+@ DikaArdnt [author]
+@ Mhankbarbar
+@ Nurutomo
+@ Rashid
+@ ZeeoneOfc
+@ Penyedia Module
+@ And All Support
 **/
 
 
@@ -48,7 +48,7 @@ const zee = require('xfarr-api')
 const { toAudio, toPTT} = require('./lib/converter')
 const { yta, ytv, ytvd, ytvf, servers } = require('./lib/y2mate')
 const { pinterest, wallpaper, wikimedia, hentai, quotesAnime} = require('./lib/scraper')
-const {bytesToSize,fileIO,  UploadFileUgu,telesticker, webp2mp4File, TelegraPh } = require('./lib/uploader')
+const {bytesToSize,fileIO,  UploadFileUgu,telesticker, webp2mp4File, TelegraPh } = require('./lib/uploader')
 const { addResponList, delResponList, isAlreadyResponList, isAlreadyResponListGroup, sendResponList, updateResponList, getDataResponList } = require('./lib/respon-list');
 const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('./lib/myfunc')
 const database = require('./database/database.json')
@@ -58,7 +58,7 @@ const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
 // language
-const  { ind } = require(`./language`)
+const  { ind } = require(`./language`)
 lang = ind //language
 enter = '\n'
 typemenu = 'templateLocation'
@@ -83,60 +83,60 @@ const tebaktebakan = db.data.game.tebaktebakan = []
 
 
 module.exports = alpha = async (alpha, m, chatUpdate, store) => {
-    try {
-        var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ""
- 		var budy = (typeof m.text == 'string' ? m.text : ' ')
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
-        const isCmd = body.startsWith(prefix)
-        const from = mek.key.remoteJid
-		const content = JSON.stringify(mek.message)
-        const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
-        const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
-        const wit = moment(Date.now()).tz('Asia/Jayapura').locale('id').format('HH:mm:ss z')
-        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
-        const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
-        const args = body.trim().split(/ +/).slice(1)
-        const pushname = m.pushName || "No Name"
-        const sender = m.isGroup ? (mek.key.participant ? mek.key.participant : mek.participant) : mek.key.remoteJid
-        const isCreator = [alpha.user.id, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const itsMe = m.sender == alpha.user.id ? true : false
-        const text = q = args.join(" ")
-        const c = args.join(' ')
-        const quoted = m.quoted ? m.quoted : m
-        const mime = (quoted.msg || quoted).mimetype || ''
-		const isMedia = /image|video|sticker|audio/.test(mime)
-	
-        // Group
-        const botNumber = alpha.user.id ? alpha.user.id.split(":")[0]+"@s.whatsapp.net" : alpha.user.id
-        const groupMetadata = m.isGroup ? await alpha.groupMetadata(from) : ''
-        const groupId = m.isGroup ? groupMetadata.id : ''
-        const groupName = m.isGroup ? groupMetadata.subject : ''
-        const participants = m.isGroup ? await groupMetadata.participants : ''
-        const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
-		const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
-        const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
-        const groupOwner = m.isGroup ? groupMetadata.owner : ''
-        const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
-        const groupMembers = m.isGroup ? await groupMetadata.participants : ''
-        const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
-		const isNumber = x => typeof x === 'number' && !isNaN(x)
-		
-		const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: pp_bot, surface: 200, message: `© ${ownername}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
-		const fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `© ${ownername}`,jpegThumbnail: pp_bot}}}
-		const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":359996400,"ptt": "true"}} } 
-		const fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})},message: {"videoMessage": { "title":`© ${ownername}`, "h": `Hmm`,'seconds': '359996400', 'gifPlayback': 'true', 'caption': `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
-		const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "P", "caption": `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
-		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) },message: { "videoMessage": { "title":`${pushname}`, "h": `Hmm`,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': pp_bot}}}
-		const floc = {key : {participant : '0@s.whatsapp.net'},message: {locationMessage: {name: `${ownername}`,jpegThumbnail: pp_bot}}}
-		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `6283136505591-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': pp_bot, thumbnail: pp_bot,sendEphemeral: true}}}
-		let picaks = [flaming,fluming,flarun,flasmurf]
-		let picak = picaks[Math.floor(Math.random() * picaks.length)]
-		
-		
-		const reply = async (teks) => {
-			return await alpha.sendFakeLink(m.chat,teks,salam, pushname,ownername, thumbnail, myweb, m)
-		}
-		// DATABASE
+    try {
+        var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ""
+var budy = (typeof m.text == 'string' ? m.text : ' ')
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+        const isCmd = body.startsWith(prefix)
+        const from = mek.key.remoteJid
+const content = JSON.stringify(mek.message)
+        const time = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss z')
+        const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
+        const wit = moment(Date.now()).tz('Asia/Jayapura').locale('id').format('HH:mm:ss z')
+        const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+        const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+        const args = body.trim().split(/ +/).slice(1)
+        const pushname = m.pushName || "No Name"
+        const sender = m.isGroup ? (mek.key.participant ? mek.key.participant : mek.participant) : mek.key.remoteJid
+        const isCreator = [alpha.user.id, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const itsMe = m.sender == alpha.user.id ? true : false
+        const text = q = args.join(" ")
+        const c = args.join(' ')
+        const quoted = m.quoted ? m.quoted : m
+        const mime = (quoted.msg || quoted).mimetype || ''
+const isMedia = /image|video|sticker|audio/.test(mime)
+
+        // Group
+        const botNumber = alpha.user.id ? alpha.user.id.split(":")[0]+"@s.whatsapp.net" : alpha.user.id
+        const groupMetadata = m.isGroup ? await alpha.groupMetadata(from) : ''
+        const groupId = m.isGroup ? groupMetadata.id : ''
+        const groupName = m.isGroup ? groupMetadata.subject : ''
+        const participants = m.isGroup ? await groupMetadata.participants : ''
+        const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
+const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
+        const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+        const groupOwner = m.isGroup ? groupMetadata.owner : ''
+        const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
+        const groupMembers = m.isGroup ? await groupMetadata.participants : ''
+        const mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
+const isNumber = x => typeof x === 'number' && !isNaN(x)
+
+const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: pp_bot, surface: 200, message: `© ${ownername}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+const fdoc = {key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `© ${ownername}`,jpegThumbnail: pp_bot}}}
+const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":359996400,"ptt": "true"}} } 
+const fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})},message: {"videoMessage": { "title":`© ${ownername}`, "h": `Hmm`,'seconds': '359996400', 'gifPlayback': 'true', 'caption': `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
+const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "P", "caption": `© ${ownername}`, 'jpegThumbnail': pp_bot}}}
+const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) },message: { "videoMessage": { "title":`${pushname}`, "h": `Hmm`,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': pp_bot}}}
+const floc = {key : {participant : '0@s.whatsapp.net'},message: {locationMessage: {name: `${ownername}`,jpegThumbnail: pp_bot}}}
+const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `6283136505591-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': pp_bot, thumbnail: pp_bot,sendEphemeral: true}}}
+let picaks = [flaming,fluming,flarun,flasmurf]
+let picak = picaks[Math.floor(Math.random() * picaks.length)]
+
+
+const reply = async (teks) => {
+return await alpha.sendFakeLink(m.chat,teks,salam, pushname,ownername, thumbnail, myweb, m)
+}
+// DATABASE
 try {
 let users = global.db.data.users[m.sender]
 if (typeof users !== 'object') global.db.data.users[m.sender] = {}
@@ -200,64 +200,64 @@ user.afkTime = -1
 user.afkReason = ''
 }
 
-        if (m.isGroup && !m.key.fromMe &&  db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
-        	if (budy.match(`https://chat.whatsapp.com`)) {
-        	alpha.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}`}, {quoted:m})
-			alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
-		}
-	}
-        
-        // Public & Self
-        if (!alpha.public) {
-            if (!m.key.fromMe && !isCreator) return
-        }
+        if (m.isGroup && !m.key.fromMe &&  db.data.chats[m.chat].antilink && !isCreator && !isGroupAdmins && !isGroupOwner){
+        if (budy.match(`https://chat.whatsapp.com`)) {
+        alpha.sendMessage(m.chat, {text: `*Antilink Group Terdeteksi*\n\nKamu akan dikeluarkan dari group ${groupMetadata.subject}`}, {quoted:m})
+alpha.groupParticipantsUpdate(m.chat, [sender], 'remove')
+}
+}
+        
+        // Public & Self
+        if (!alpha.public) {
+            if (!m.key.fromMe && !isCreator) return
+        }
 
-        // Push Message To Console
-        if (m.message) {
-        	console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m CMD \x1b[1;37m]', time, chalk.green(budy || m.mtype), 'from', chalk.green(pushname), 'in', chalk.green(groupName ? groupName : 'Private Chat' ), 'args :', chalk.green(text.length))
-         }
-        
-		const sendFileFromUrl = async (from, url, caption, mek, men) => {
-            let mime = '';
-            let res = await axios.head(url)
-            mime = res.headers['content-type']
-            if (mime.split("/")[1] === "gif") {
-                return alpha.sendMessage(from, { video: await getBuffer(url), caption: caption, gifPlayback: true, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
-                }
-            let type = mime.split("/")[0]+"Message"
-            if(mime === "application/pdf"){
-                return alpha.sendMessage(m.chat, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, mentions: men ? men : []}, {quoted: mek })
-            }
-            if(mime.split("/")[0] === "image"){
-                return alpha.sendMessage(m.chat, { image: await getBuffer(url), caption: caption, mentions: men ? men : []}, {quoted: m})
-            }
-            if(mime.split("/")[0] === "video"){
-                return alpha.sendMessage(m.chat, { video: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
-            }
-            if(mime.split("/")[0] === "audio"){
-                return alpha.sendMessage(m.chat, { audio: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'audio/mpeg'}, {quoted: m })
-            }
-        }
-        
+        // Push Message To Console
+        if (m.message) {
+        console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m CMD \x1b[1;37m]', time, chalk.green(budy || m.mtype), 'from', chalk.green(pushname), 'in', chalk.green(groupName ? groupName : 'Private Chat' ), 'args :', chalk.green(text.length))
+         }
+        
+const sendFileFromUrl = async (from, url, caption, mek, men) => {
+            let mime = '';
+            let res = await axios.head(url)
+            mime = res.headers['content-type']
+            if (mime.split("/")[1] === "gif") {
+                return alpha.sendMessage(from, { video: await getBuffer(url), caption: caption, gifPlayback: true, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
+                }
+            let type = mime.split("/")[0]+"Message"
+            if(mime === "application/pdf"){
+                return alpha.sendMessage(m.chat, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, mentions: men ? men : []}, {quoted: mek })
+            }
+            if(mime.split("/")[0] === "image"){
+                return alpha.sendMessage(m.chat, { image: await getBuffer(url), caption: caption, mentions: men ? men : []}, {quoted: m})
+            }
+            if(mime.split("/")[0] === "video"){
+                return alpha.sendMessage(m.chat, { video: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'video/mp4'}, {quoted: m})
+            }
+            if(mime.split("/")[0] === "audio"){
+                return alpha.sendMessage(m.chat, { audio: await getBuffer(url), caption: caption, mentions: men ? men : [], mimetype: 'audio/mpeg'}, {quoted: m })
+            }
+        }
+        
 /*if(autorecording){
-	if(autorecording== true) return
-	await alpha.sendPresenceUpdate('recording', m.chat)
-	} else if(autoketik){
-		if(autoketik == true) return
-		await alpha.sendPresenceUpdate('composing', m.chat)
-		} else if(available){
-			if(available == true) return
-			alpha.sendPresenceUpdate('available', m.chat)
-			}*/
+if(autorecording== true) return
+await alpha.sendPresenceUpdate('recording', m.chat)
+} else if(autoketik){
+if(autoketik == true) return
+await alpha.sendPresenceUpdate('composing', m.chat)
+} else if(available){
+if(available == true) return
+alpha.sendPresenceUpdate('available', m.chat)
+}*/
 
 
- //FUN
+//FUN
 
 if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 kuis = true
 jawaban = kuismath[m.sender.split('@')[0]]
 if (budy.toLowerCase() == jawaban) {
-	alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Kuis Math' }, type: 1 }], ` 🎮 Kuis Matematika🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'math medium', buttonText: { displayText: 'Kuis Math' }, type: 1 }], ` 🎮 Kuis Matematika🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math *mode*`, `© ${ownername}`, m)
 delete kuismath[m.sender.split('@')[0]]
 } else m.reply('*Jawaban Salah!*')
 }
@@ -415,11 +415,11 @@ if(!isMedia && global.autoread == true) {
 alpha.sendReadReceipt(m.chat, sender, [m.key.id])
 }
 function _0x505265(_0x1d2b1a,_0x48794e,_0x5559f4,_0x4383e9){return _0x2015(_0x4383e9-0x186,_0x5559f4);}(function(_0x3fd57c,_0x33af7a){function _0x4e5468(_0x2ecc60,_0x111073,_0x3ff466,_0x5682ac){return _0x2015(_0x5682ac- -0x3e4,_0x3ff466);}function _0x54790f(_0x172b40,_0x49f083,_0x274efc,_0x1196c1){return _0x2015(_0x274efc- -0x11,_0x1196c1);}const _0x72b92e=_0x3fd57c();while(!![]){try{const _0x14f68f=-parseInt(_0x54790f(0x10e,0x10b,0x114,0x124))/(0x17a9+0x946+-0x20ee)+parseInt(_0x4e5468(-0x2b2,-0x2aa,-0x295,-0x2aa))/(0x15e3+-0x5b*0x3+-0x9*0x250)+parseInt(_0x4e5468(-0x2c7,-0x2b0,-0x2aa,-0x2b6))/(0xba9*-0x3+-0x2*0xf2b+0x4154)+parseInt(_0x54790f(0x10f,0x11f,0x116,0x10c))/(-0x124b+-0xaa1*0x3+0x3232)*(parseInt(_0x54790f(0x100,0x105,0x112,0x123))/(0x1117+0x6*-0x384+0x406))+-parseInt(_0x4e5468(-0x2c2,-0x2a4,-0x2a0,-0x2af))/(-0x12*0x40+-0x7e6*-0x1+-0x360)+parseInt(_0x54790f(0xf7,0x111,0x107,0x10b))/(-0x4*0x239+-0x1245+0x1b30)*(parseInt(_0x4e5468(-0x2a4,-0x2bd,-0x2bf,-0x2b4))/(-0x25+-0x3b5+0x3e2*0x1))+parseInt(_0x54790f(0x118,0x108,0x10e,0x117))/(-0x11ef+-0x2636+0x382e);if(_0x14f68f===_0x33af7a)break;else _0x72b92e['push'](_0x72b92e['shift']());}catch(_0x291230){_0x72b92e['push'](_0x72b92e['shift']());}}}(_0x1c9c,-0x1*0x3fb93+0x28*-0xbf0+0x88292));function _0x4d3015(_0x436322,_0x5f429c,_0x4afcd8,_0x2e4eb2){return _0x2015(_0x4afcd8-0x2b0,_0x2e4eb2);}!m['isGroup']&&!m[_0x4d3015(0x3d9,0x3e6,0x3e9,0x3e4)]['fromMe']&&global['db']['data'][_0x505265(0x2ac,0x2a2,0x2aa,0x2b3)][botNumber][_0x4d3015(0x3da,0x3da,0x3eb,0x3ff)+'d']&&(simi=await fetchJson(_0x505265(0x29c,0x290,0x28d,0x2a1)+_0x505265(0x29d,0x295,0x2b6,0x2a4)+'net/v2/?lc'+_0x505265(0x2a7,0x2b4,0x29a,0x2ae)+'se&text='+command),m[_0x4d3015(0x3e0,0x3da,0x3d2,0x3da)]('_'+simi['success']+'_'));function _0x2015(_0x263178,_0x297954){const _0xc652e3=_0x1c9c();return _0x2015=function(_0x1d03d2,_0x5c3e74){_0x1d03d2=_0x1d03d2-(-0x2418+-0x661+-0x1*-0x2b91);let _0x458671=_0xc652e3[_0x1d03d2];if(_0x2015['bXOOYH']===undefined){var _0x4c9102=function(_0x200b3d){const _0x4a66aa='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2e6348='',_0x2a8a60='';for(let _0x48d07d=0x1a75+-0x2*0x175+0x11f*-0x15,_0x9cc177,_0x3981bd,_0x2602a3=-0x1965*0x1+-0x508+0x1e6d;_0x3981bd=_0x200b3d['charAt'](_0x2602a3++);~_0x3981bd&&(_0x9cc177=_0x48d07d%(-0x7*0x3d3+0x4d1*-0x7+0x160*0x2c)?_0x9cc177*(0x21cf*0x1+-0x1f9e+-0x1f1)+_0x3981bd:_0x3981bd,_0x48d07d++%(0x27*-0xd6+-0xe51*0x2+-0x1c0*-0x23))?_0x2e6348+=String['fromCharCode'](0x386*-0x1+-0x2659+0x1*0x2ade&_0x9cc177>>(-(0x8f6*-0x1+-0x1b*-0x5a+0x1*-0x86)*_0x48d07d&-0x23f5+0x26a8+0x2ad*-0x1)):-0x1c4e*0x1+-0x1*0x11bf+0x2e0d*0x1){_0x3981bd=_0x4a66aa['indexOf'](_0x3981bd);}for(let _0x4fee7d=-0xa*-0x307+0x25ed+0xdd*-0x4f,_0xaa9884=_0x2e6348['length'];_0x4fee7d<_0xaa9884;_0x4fee7d++){_0x2a8a60+='%'+('00'+_0x2e6348['charCodeAt'](_0x4fee7d)['toString'](0x32f*0x1+0x1e6e+-0x3*0xb2f))['slice'](-(0x3*0x287+0x1b*0x14b+-0x2a7c));}return decodeURIComponent(_0x2a8a60);};_0x2015['jpmqmA']=_0x4c9102,_0x263178=arguments,_0x2015['bXOOYH']=!![];}const _0x3b01fa=_0xc652e3[-0x12df+0x8b2+-0x5*-0x209],_0x1d7bde=_0x1d03d2+_0x3b01fa,_0x6d89d8=_0x263178[_0x1d7bde];return!_0x6d89d8?(_0x458671=_0x2015['jpmqmA'](_0x458671),_0x263178[_0x1d7bde]=_0x458671):_0x458671=_0x6d89d8,_0x458671;},_0x2015(_0x263178,_0x297954);}if(isMedia&&m[_0x4d3015(0x3c7,0x3dc,0x3cd,0x3ce)][_0x4d3015(0x3c9,0x3b6,0x3ca,0x3c9)]&&m['msg']['fileSha256'][_0x4d3015(0x3c3,0x3dd,0x3d0,0x3d2)]('base64')in global['db'][_0x4d3015(0x3e4,0x3e5,0x3ee,0x402)]['cmd']){let hash=global['db'][_0x4d3015(0x401,0x402,0x3ee,0x3f6)]['cmd'][m['msg'][_0x4d3015(0x3c6,0x3db,0x3ca,0x3c0)][_0x505265(0x2b3,0x2a9,0x29b,0x2a6)](_0x4d3015(0x3c1,0x3c6,0x3d4,0x3c1))],{q,mentionedJid}=hash;const _0x5e1289={};_0x5e1289[_0x4d3015(0x3ca,0x3be,0x3d1,0x3cb)]=q,_0x5e1289[_0x505265(0x29a,0x2a4,0x2b4,0x29f)]=mentionedJid;let messages=await generateWAMessage(m[_0x4d3015(0x3e4,0x3d8,0x3e7,0x3e5)],_0x5e1289,{'userJid':alpha[_0x505265(0x2cc,0x2b9,0x2ba,0x2c6)]['id'],'quoted':m[_0x505265(0x2b2,0x2b3,0x2a5,0x2b1)]&&m[_0x4d3015(0x3dd,0x3c8,0x3db,0x3ce)][_0x505265(0x2b1,0x2c1,0x29e,0x2b0)]});messages[_0x4d3015(0x3fd,0x3f4,0x3e9,0x3d6)][_0x4d3015(0x3dd,0x3eb,0x3e1,0x3df)]=areJidsSameUser(m[_0x4d3015(0x3e7,0x3ca,0x3dc,0x3ef)],alpha[_0x505265(0x2d6,0x2c7,0x2b5,0x2c6)]['id']),messages[_0x505265(0x2bf,0x2c5,0x2b8,0x2bf)]['id']=m[_0x4d3015(0x3f5,0x3d6,0x3e9,0x3ee)]['id'],messages[_0x505265(0x2c4,0x2c1,0x2ae,0x2b9)]=m[_0x4d3015(0x3f7,0x3db,0x3e3,0x3d3)];if(m['isGroup'])messages[_0x505265(0x2be,0x2b5,0x2b4,0x2c5)+'t']=m[_0x4d3015(0x3c9,0x3c7,0x3dc,0x3d3)];let msg={...chatUpdate,'messages':[proto[_0x505265(0x2b1,0x2b7,0x2b8,0x2c3)+'Info'][_0x505265(0x2ba,0x2ba,0x2a5,0x2af)](messages)],'type':'append'};alpha['ev'][_0x4d3015(0x3de,0x3f8,0x3e8,0x3e6)]('messages.u'+_0x4d3015(0x3cc,0x3df,0x3cc,0x3d2),msg);}if(m[_0x505265(0x2b7,0x2bd,0x2ba,0x2ac)]&&isAlreadyResponList(from,body,db_respon_list)){var get_data_respon=getDataResponList(from,body,db_respon_list);if(get_data_respon[_0x4d3015(0x3de,0x3d1,0x3e6,0x3ec)]===![]){const _0x12984f={};_0x12984f['quoted']=m,alpha[_0x505265(0x2b8,0x2b5,0x2af,0x2b8)+'e'](from,{'text':sendResponList(from,body,db_respon_list)},_0x12984f);}else{const _0x135ce0={};_0x135ce0[_0x4d3015(0x3c7,0x3d6,0x3db,0x3cc)]=m,alpha[_0x4d3015(0x3df,0x3ea,0x3e2,0x3f1)+'e'](from,{'image':await getBuffer(get_data_respon[_0x4d3015(0x3ce,0x3d3,0x3df,0x3d8)]),'caption':get_data_respon[_0x4d3015(0x3d2,0x3db,0x3e4,0x3d7)]},_0x135ce0);}}function _0x1c9c(){const _0x42f9f0=['AxnhCM91Ca','mte5otq5mNPluvvAsG','pwLKjMnMpwzHBa','zNjVBu9IAMvJDa','zMfRzu9IAG','CxvVDgvK','C2vUzgvY','C2v0DgLUz3m','ndiYnZuXwMHVwMvj','Aw1Hz2vFDxjS','mteXnZu5mM5gAxjjCq','zNjVBu1L','C2vUze1LC3nHzW','ChvZAe5HBwu','CMvZCg9UC2u','mtCXnJq1mfHxBvL3rG','AxnjBwfNzq','y2HHDa','zw1PDa','A2v5','nJG1ntjdy1P4zee','yxv0B3jLC3bVBG','y2HHDhm','v2vItwvZC2fNzq','zgf0yq','CgfYDgLJAxbHBG','DxnLCG','n1HtsvPnEa','BwvUDgLVBNm','zMLSzvnOyti1nG','Ahr0Chm6lY9HCa','ChnLCNq','BxnN','As5ZAw1ZAw1PlG','oteZnZe2DxDNCgrm','Dg9tDhjPBMC','Dgv4Da','CMvWBhK','nxr3rLbdvq','yMfZzty0','mJu1nZuXr1bzvxfz'];_0x1c9c=function(){return _0x42f9f0;};return _0x1c9c();}if(db[_0x4d3015(0x3dd,0x3da,0x3ee,0x3f9)][_0x4d3015(0x3f1,0x3e9,0x3ec,0x3f2)][m[_0x505265(0x2cc,0x2c8,0x2c6,0x2bd)]]['mute']&&!isGroupAdmins&&!isCreator)return;
-        switch(command) {
-        	case 'absen':
-        if (m.isGroup) { 
-  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
-  } 
+        switch(command) {
+        case 'absen':
+        if (m.isGroup) { 
+  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
+  } 
 global.db.data.absen = global.db.data.absen || {} 
 if (!(from in global.db.data.absen)) return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
 
@@ -429,9 +429,9 @@ if (wasVote)return reply('Kamu sudah absen!')
 absen.push(m.sender) 
 let d = new Date 
 let date = d.toLocaleDateString('id', { 
-  day: 'numeric', 
-  month: 'long', 
-  year: 'numeric' 
+  day: 'numeric', 
+  month: 'long', 
+  year: 'numeric' 
 }) 
 let list = absen.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
 let caption = `Tanggal: ${date}
@@ -446,17 +446,17 @@ await alpha.send2ButMes(m.chat, caption, `© ${ownername}`, `absen`, `Absen`, `c
 //alpha.sendTextWithMentions(m.chat, caption, m)
 break
 case 'cekabsen':{
-	if (m.isGroup) { 
-  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
-  } 
+if (m.isGroup) { 
+  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
+  } 
 global.db.data.absen = global.db.data.absen || {}
 if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
 
 let dd = new Date 
 let datee = dd.toLocaleDateString('id', { 
-  day: 'numeric', 
-  month: 'long', 
-  year: 'numeric' 
+  day: 'numeric', 
+  month: 'long', 
+  year: 'numeric' 
 }) 
 let absenn = global.db.data.absen[from][1] 
 let listt = absenn.map((v, i) => `• ${i + 1}. @${v.split`@`[0]}`).join('\n') 
@@ -475,29 +475,29 @@ break
 
 case 'delabsen': case 'deleteabsen':{
 if (m.isGroup) { 
-  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
-  } 
-  global.db.data.absen = global.db.data.absen || {}
-  if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
+  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
+  } 
+  global.db.data.absen = global.db.data.absen || {}
+  if (!(from in global.db.data.absen))return alpha.send1ButMes(m.chat, `Tidak ada absen berlangsung di group ini !`, `© ${ownername}`, `absenstart`, `Mulai Absen`, m)
 
-  delete global.db.data.absen[from]
+  delete global.db.data.absen[from]
 reply(`Absen berhasil dihapus`)
 }
 break
 case 'absenstart': case 'mulaiabsen':{
 if (m.isGroup) { 
-  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
+  if (!(isGroupAdmins || isCreator))return reply(lang.adminOnly())
 } 
 global.db.data.absen = global.db.data.absen || {}
 if (from in global.db.data.absen)return alpha.send2ButMes(m.chat, `Masih ada sesi absen di group ini !`, `© ${ownername}`, `cekabsen`, `Cek Absen`, `deleteabsen`, `Hapus Absen`, m)
 
 global.db.data.absen[from] = [
-  await alpha.send1ButMes(m.chat, `Absen dimulai...`, `© ${ownername}`, `absen`, `Absen`, m),
+  await alpha.send1ButMes(m.chat, `Absen dimulai...`, `© ${ownername}`, `absen`, `Absen`, m),
 
-  [], q ? q : '']
-  }
+  [], q ? q : '']
+  }
 break
-        	//Database
+        //Database
 case 'setcmd': {
 global.db.data.cmd = global.db.data.cmd || {}
 if (!m.quoted)return reply(`Reply stiker!!\nExample : ${prefix + command} menu\n\n\n*Note : Tidak dapat disertai Prefix!!*`)
@@ -531,7 +531,7 @@ let teks = `
 Info: *bold* hash is Locked
 
 *Hash :*
- ${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
+${Object.entries(global.db.data.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} 
 *Command: ${value.q}*
 *Creator : @${value.creator.split("@")[0]}*
 *Create Time : ${moment(value.at * 1).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}*
@@ -552,343 +552,343 @@ sticker[hash].locked = !/^un/i.test(command)
 reply('Done!')
 }
 break
-            case 'addmsg': {
-                if (!m.quoted) return reply('Reply Message Yang Ingin Disave Di Database')
-                if (!text) return reply(`Example : ${prefix + command} nama file`)
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (text.toLowerCase() in msgs) return reply(`'${text}' telah terdaftar di list pesan`)
-                msgs[text.toLowerCase()] = quoted.fakeObj
-                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
+            case 'addmsg': {
+                if (!m.quoted) return reply('Reply Message Yang Ingin Disave Di Database')
+                if (!text) return reply(`Example : ${prefix + command} nama file`)
+                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                if (text.toLowerCase() in msgs) return reply(`'${text}' telah terdaftar di list pesan`)
+                msgs[text.toLowerCase()] = quoted.fakeObj
+                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
 reply(`Berhasil menambahkan pesan di list pesan sebagai '${text}'
-    
+    
 Akses dengan ${prefix}getmsg ${text}
 Lihat list Pesan Dengan ${prefix}listmsg`)
-            }
-            break
-            case 'getmsg': {
-                if (!text) reply(`Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`)
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-                if (!(text.toLowerCase() in msgs)) reply(`'${text}' tidak terdaftar di list pesan`)
-                alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
-            }
-            break
-            case 'listmsg': {
-                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-	        let seplit = Object.entries(msgs).map(([nama, isi]) => { return { nama, ...isi } })
-		let teks = '「 LIST DATABASE 」\n\n'
-		for (let i of seplit) {
-		    teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
-	        }
-	        reply(teks)
-	    }
-	    break
-		case 'delmsg': case 'deletemsg': {
-	        let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
-	        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' tidak terdaftar didalam list pesan`)
-		delete msgs[text.toLowerCase()]
-                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
-		reply(`Berhasil menghapus '${text}' dari list pesan`)
-            }
-	    break
-	
-	case 'antiviewonce': case 'antionce':
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-      	if (global.db.data.chats[m.chat].antionce) return reply(`Sudah Aktif Sebelumnya`)
-        global.db.data.chats[m.chat].antionce = true
-        reply(`${command} Berhasil Di Aktifkan !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].antionce) return reply(`Sudah Nonaktif Sebelumnya`)
-        global.db.data.chats[m.chat].antionce = false
-        reply(`${command} Berhasil Di Nonaktifkan !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}
-			break
-			case 'autorespond': case 'autorespon': {
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-      	if (global.db.data.settings[botNumber].autorespond) return reply(`Sudah Aktif Sebelumnya`)
-        global.db.data.settings[botNumber].autorespond = true
-        reply(`${command} Berhasil Di Aktifkan !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.settings[botNumber].autorespond) return reply(`Sudah Nonaktif Sebelumnya`)
-        global.db.data.settings[botNumber].autorespond = false
-        reply(`${command} Berhasil Di Nonaktifkan !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Auto Respond', `© ${ownername}`, [{buttonId: 'autorespond on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'autorespond off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}}
-			break
-case 'banchats':  case 'banchat': 
+            }
+            break
+            case 'getmsg': {
+                if (!text) reply(`Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`)
+                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+                if (!(text.toLowerCase() in msgs)) reply(`'${text}' tidak terdaftar di list pesan`)
+                alpha.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+            }
+            break
+            case 'listmsg': {
+                let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+        let seplit = Object.entries(msgs).map(([nama, isi]) => { return { nama, ...isi } })
+let teks = '「 LIST DATABASE 」\n\n'
+for (let i of seplit) {
+    teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${Object.keys(i.message)[0]}\n────────────────────────\n\n`
+        }
+        reply(teks)
+    }
+    break
+case 'delmsg': case 'deletemsg': {
+        let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
+        if (!(text.toLowerCase() in msgs)) return reply(`'${text}' tidak terdaftar didalam list pesan`)
+delete msgs[text.toLowerCase()]
+                fs.writeFileSync('./database/database.json', JSON.stringify(msgs))
+reply(`Berhasil menghapus '${text}' dari list pesan`)
+            }
+    break
+
+case 'antiviewonce': case 'antionce':
+        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+        if (args[0] === "on") {
+      if (global.db.data.chats[m.chat].antionce) return reply(`Sudah Aktif Sebelumnya`)
+        global.db.data.chats[m.chat].antionce = true
+        reply(`${command} Berhasil Di Aktifkan !`)
+        } else if (args[0] === "off") {
+        if (!global.db.data.chats[m.chat].antionce) return reply(`Sudah Nonaktif Sebelumnya`)
+        global.db.data.chats[m.chat].antionce = false
+        reply(`${command} Berhasil Di Nonaktifkan !`)
+        } else {
+        alpha.sendButMessage(from, 'Mode Anti View Once', `© ${ownername}`, [{buttonId: 'antionce on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antionce off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+}
+break
+case 'autorespond': case 'autorespon': {
+        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+        if (args[0] === "on") {
+      if (global.db.data.settings[botNumber].autorespond) return reply(`Sudah Aktif Sebelumnya`)
+        global.db.data.settings[botNumber].autorespond = true
+        reply(`${command} Berhasil Di Aktifkan !`)
+        } else if (args[0] === "off") {
+        if (!global.db.data.settings[botNumber].autorespond) return reply(`Sudah Nonaktif Sebelumnya`)
+        global.db.data.settings[botNumber].autorespond = false
+        reply(`${command} Berhasil Di Nonaktifkan !`)
+        } else {
+        alpha.sendButMessage(from, 'Mode Auto Respond', `© ${ownername}`, [{buttonId: 'autorespond on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'autorespond off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+}}
+break
+case 'banchats':  case 'banchat': 
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 if (global.db.data.chats[m.chat].mute) return reply(`Bot telah di ban sebelumnya`)
 global.db.data.chats[m.chat].mute = true
-        reply(`Bot Telah Di Ban chat Di Group Ini`)
+        reply(`Bot Telah Di Ban chat Di Group Ini`)
 break
 case 'unbanchats': case 'unbanchat':
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 if (!global.db.data.chats[m.chat].mute) return reply(`Bot belum di ban dalam group ini`)
-        global.db.data.chats[m.chat].mute = false
-        reply(`Bot Berhasil Di unban chat`)
+        global.db.data.chats[m.chat].mute = false
+        reply(`Bot Berhasil Di unban chat`)
 break
 case 'banchat': case 'banchats': case 'mute':
 if (!m.isGroup) return reply(lang.groupOnly())
-         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-		if (global.db.data.chats[m.chat].mute) return reply(`Sudah Aktif Sebelumnya`)
-        global.db.data.chats[m.chat].mute = true
-        reply(`Bot Telah Di Mute Di Group Ini`)
-        } else if (args[0] === "off") {
-		if (!global.db.data.chats[m.chat].mute) return reply(`Sudah Nonaktif Sebelumnya`)
-        global.db.data.chats[m.chat].mute = false
-        reply(`Bot Berhasil Di UnMute`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Mute', `© ${ownername}`, [{buttonId: 'mute on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'mute off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}
-			break
-        	case 'nsfw':
-        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-        if (args[0] === "on") {
-		if (global.db.data.chats[m.chat].nsfw) return reply(`Sudah Aktif Sebelumnya`)
-        global.db.data.chats[m.chat].nsfw = true
-        reply(`NsFw Berhasil Di Aktifkan !`)
-        } else if (args[0] === "off") {
-        	if (!global.db.data.chats[m.chat].nsfw) return reply(`Sudah Nonaktif Sebelumnya`)
-        global.db.data.chats[m.chat].nsfw = false
-        reply(`NsFw Berhasil Di Nonaktifkan !`)
-        } else {
-        	alpha.sendButMessage(from, 'Mode Nfsw', `© ${ownername}`, [{buttonId: 'nsfw on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'nsfw off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-			}
-			break
-			case 'antilink':
-			if (!m.isGroup) return reply(lang.groupOnly())
-			if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
-			if (!isBotAdmins) return reply(lang.botNotAdmin())
-			if (args[0] === "on") {
-				if (global.db.data.chats[m.chat].antilink) return reply('Sudah Aktif Sebelumnya')
-				global.db.data.chats[m.chat].antilink = true
-				reply(`Antilink Berhasil Di Aktifkan !`)
-				} else if (args[0] === "off") {
-					if (!global.db.data.chats[m.chat].antilink) return reply('Sudah Nonaktif Sebelumnya')
-					global.db.data.chats[m.chat].antilink = false
-					reply(`Antilink Berhasil Di Nonaktifkan !`)
-					} else {
-						alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{buttonId: 'antilink on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antilink off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
-						}
-					break
-            
-            case 'chat': {
-                if (!m.key.fromMe && !isCreator) throw mess.owner
-                if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
-                if (args[0] === 'mute') {
-                    alpha.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unmute') {
-                    alpha.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'archive') {
-                    alpha.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unarchive') {
-                    alpha.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'read') {
-                    alpha.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unread') {
-                    alpha.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'delete') {
-                    alpha.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                }
-            }
-            break
-            
-            case 'linkgroup': case 'linkgrup': case 'linkgc': {
-                if (!m.isGroup) throw mess.group
-                let response = await alpha.groupInviteCode(m.chat)
-                alpha.sendText(m.chat, `Link Group : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
-            }
-            break
-            case 'delete': case 'del': {
-            	if (!m.key.fromMe && !isCreator) throw mess.owner
-                if (!m.quoted) throw false
-                let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
-                alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
-            }
-            break
-	    case 'toimage': case 'toimg': {
-                if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `Reply Sticker Dengan Caption *${prefix + command}*`
-                reply(lang.wait())
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                let ran = await getRandom('.png')
-                exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-                    fs.unlinkSync(media)
-                    if (err) throw 'Maaf Saat Ini Belum Support Sticker Gif '
-                    let buffer = fs.readFileSync(ran)
-                    alpha.sendMessage(m.chat, { image: buffer }, { quoted: m })
-                    fs.unlinkSync(ran)
-                })
-            }
-            break
-            case 'pinterest': {
-            	if (!q) return reply(lang.wrongFormat(prefix))
-                reply(lang.wait())
-                anu = await pinterest(text)
-                result = anu[Math.floor(Math.random(), anu.length)]
-                let gam = await getBuffer(result)
-				var but = [
-				{
-					"urlButton": {
-						"displayText": "Media Url",
-						"url": `${result}`
-						}
-					}
-				]
-				await alpha.send5ButImg(from, `Hasil percarian ${text}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-				.catch((err) => {
-                    reply(lang.err())
-                })
-				}
-            break
-            case 'wallpaper': {
-            	if (!q) return reply(lang.wrongFormat(prefix))
-                reply(lang.wait())
-                wallpaper(text).then( async anu =>{
-                result = anu[Math.floor(Math.random(), anu.length)]
-                let gam = await getBuffer(result.image[0])
-				var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-				})
-				.catch((err) => {
-                    reply(lang.err())
-                })
-				}
-            break
-            case 'wikimedia': {
-            	if (!q) return reply(lang.wrongFormat(prefix))
-                reply(lang.wait())
-                wikimedia(text).then( async anu =>{
-                result = anu[Math.floor(Math.random(), anu.length)]
-                let gam = await getBuffer(result.image[0])
-				var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-				})
-				.catch((err) => {
-                    reply(lang.err())
-                })
-				}
-            break
-            
-            case 'quotesanime': case 'quoteanime': {
-                reply(lang.wait())
-                quotesAnime().then(async anu =>{
-				gam = await getBuffer(picak + 'quotes anime')
-                result = anu[Math.floor(Math.random(), anu.length)]
-                alpha.send5ButLoc(m.chat, `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'quotesanime'}}], {quoted:m})
-				})
-            }
-            break
-            case 'ping': case 'tes': case 'runtime':
-            reply(`Runtime : ${runtime(process.uptime())}`)
-            break
-            case 'public': {
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                alpha.public = true
-                reply('Sukses Ganti Ke Mode Public')
-            }
-            break
-            case 'self': {
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                alpha.public = false
-                reply('Sukses Ganti Ke Mode Self\n\nUntuk mengubah ke mode public silahkan gunakan nomor bot')
-            }
-            break
-            case 'owner': case 'creator': {
-                alpha.sendContact(m.chat, global.owner, m)
-            }
-            break
-            case 'rules':{
-            	let gam = await getBuffer(picak + 'Syarat Dan Ketentuan')
-            var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButImg(from, lang.rules(prefix), `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-				}
-            break
-            
-            case 'donasi': case 'donate':{
-            var but = [
-          {
-            "urlButton": {
-              "displayText": "YouTube Creator",
-              "url": `${youtube}`
-            }
-          },
-          {
-            "urlButton": {
-              "displayText": "Rest Api's",              
-              "url": `${myweb}`
-
-            }
-          },
-          {
-            "quickReplyButton": {
-              "displayText": "Rules",
-"id": 'rules'
-            }
-          },
-          {
-            "quickReplyButton": {
-              "displayText": "Owner",
-"id": 'owner'
-            }
-          },
+         if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+        if (args[0] === "on") {
+if (global.db.data.chats[m.chat].mute) return reply(`Sudah Aktif Sebelumnya`)
+        global.db.data.chats[m.chat].mute = true
+        reply(`Bot Telah Di Mute Di Group Ini`)
+        } else if (args[0] === "off") {
+if (!global.db.data.chats[m.chat].mute) return reply(`Sudah Nonaktif Sebelumnya`)
+        global.db.data.chats[m.chat].mute = false
+        reply(`Bot Berhasil Di UnMute`)
+        } else {
+        alpha.sendButMessage(from, 'Mode Mute', `© ${ownername}`, [{buttonId: 'mute on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'mute off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+}
+break
+        case 'nsfw':
+        if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+        if (args[0] === "on") {
+if (global.db.data.chats[m.chat].nsfw) return reply(`Sudah Aktif Sebelumnya`)
+        global.db.data.chats[m.chat].nsfw = true
+        reply(`NsFw Berhasil Di Aktifkan !`)
+        } else if (args[0] === "off") {
+        if (!global.db.data.chats[m.chat].nsfw) return reply(`Sudah Nonaktif Sebelumnya`)
+        global.db.data.chats[m.chat].nsfw = false
+        reply(`NsFw Berhasil Di Nonaktifkan !`)
+        } else {
+        alpha.sendButMessage(from, 'Mode Nfsw', `© ${ownername}`, [{buttonId: 'nsfw on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'nsfw off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+}
+break
+case 'antilink':
+if (!m.isGroup) return reply(lang.groupOnly())
+if (!isGroupAdmins && !isGroupOwner && !isCreator) return reply(lang.adminOnly())
+if (!isBotAdmins) return reply(lang.botNotAdmin())
+if (args[0] === "on") {
+if (global.db.data.chats[m.chat].antilink) return reply('Sudah Aktif Sebelumnya')
+global.db.data.chats[m.chat].antilink = true
+reply(`Antilink Berhasil Di Aktifkan !`)
+} else if (args[0] === "off") {
+if (!global.db.data.chats[m.chat].antilink) return reply('Sudah Nonaktif Sebelumnya')
+global.db.data.chats[m.chat].antilink = false
+reply(`Antilink Berhasil Di Nonaktifkan !`)
+} else {
+alpha.sendButMessage(from, 'Mode Antilink', `© ${ownername}`, [{buttonId: 'antilink on', buttonText: {displayText: 'ON'}, type: 1},{buttonId: 'antilink off', buttonText: {displayText: 'OFF'}, type: 1}], {quoted: fgif})
+}
+break
+            
+            case 'chat': {
+                if (!m.key.fromMe && !isCreator) throw mess.owner
+                if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
+                if (args[0] === 'mute') {
+                    alpha.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unmute') {
+                    alpha.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'archive') {
+                    alpha.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unarchive') {
+                    alpha.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'read') {
+                    alpha.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'unread') {
+                    alpha.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                } else if (args[0] === 'delete') {
+                    alpha.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+                }
+            }
+            break
+            
+            case 'linkgroup': case 'linkgrup': case 'linkgc': {
+                if (!m.isGroup) throw mess.group
+                let response = await alpha.groupInviteCode(m.chat)
+                alpha.sendText(m.chat, `Link Group : *${groupMetadata.subject}*\nhttps://chat.whatsapp.com/${response}`, m, { detectLink: true })
+            }
+            break
+            case 'delete': case 'del': {
+            if (!m.key.fromMe && !isCreator) throw mess.owner
+                if (!m.quoted) throw false
+                let { chat, fromMe, id, isBaileys } = m.quoted
+                if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                alpha.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
+            }
+            break
+    case 'toimage': case 'toimg': {
+                if (!quoted) throw 'Reply Image'
+                if (!/webp/.test(mime)) throw `Reply Sticker Dengan Caption *${prefix + command}*`
+                reply(lang.wait())
+                let media = await alpha.downloadAndSaveMediaMessage(quoted)
+                let ran = await getRandom('.png')
+                exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+                    fs.unlinkSync(media)
+                    if (err) throw 'Maaf Saat Ini Belum Support Sticker Gif '
+                    let buffer = fs.readFileSync(ran)
+                    alpha.sendMessage(m.chat, { image: buffer }, { quoted: m })
+                    fs.unlinkSync(ran)
+                })
+            }
+            break
+            case 'pinterest': {
+            if (!q) return reply(lang.wrongFormat(prefix))
+                reply(lang.wait())
+                anu = await pinterest(text)
+                result = anu[Math.floor(Math.random(), anu.length)]
+                let gam = await getBuffer(result)
+var but = [
 {
-            "quickReplyButton": {
-              "displayText": "List Command",
+"urlButton": {
+"displayText": "Media Url",
+"url": `${result}`
+}
+}
+]
+await alpha.send5ButImg(from, `Hasil percarian ${text}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+.catch((err) => {
+                    reply(lang.err())
+                })
+}
+            break
+            case 'wallpaper': {
+            if (!q) return reply(lang.wrongFormat(prefix))
+                reply(lang.wait())
+                wallpaper(text).then( async anu =>{
+                result = anu[Math.floor(Math.random(), anu.length)]
+                let gam = await getBuffer(result.image[0])
+var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+})
+.catch((err) => {
+                    reply(lang.err())
+                })
+}
+            break
+            case 'wikimedia': {
+            if (!q) return reply(lang.wrongFormat(prefix))
+                reply(lang.wait())
+                wikimedia(text).then( async anu =>{
+                result = anu[Math.floor(Math.random(), anu.length)]
+                let gam = await getBuffer(result.image[0])
+var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButImg(from, `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+})
+.catch((err) => {
+                    reply(lang.err())
+                })
+}
+            break
+            
+            case 'quotesanime': case 'quoteanime': {
+                reply(lang.wait())
+                quotesAnime().then(async anu =>{
+gam = await getBuffer(picak + 'quotes anime')
+                result = anu[Math.floor(Math.random(), anu.length)]
+                alpha.send5ButLoc(m.chat, `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'quotesanime'}}], {quoted:m})
+})
+            }
+            break
+            case 'ping': case 'tes': case 'runtime':
+            reply(`Runtime : ${runtime(process.uptime())}`)
+            break
+            case 'public': {
+                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                alpha.public = true
+                reply('Sukses Ganti Ke Mode Public')
+            }
+            break
+            case 'self': {
+                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                alpha.public = false
+                reply('Sukses Ganti Ke Mode Self\n\nUntuk mengubah ke mode public silahkan gunakan nomor bot')
+            }
+            break
+            case 'owner': case 'creator': {
+                alpha.sendContact(m.chat, global.owner, m)
+            }
+            break
+            case 'rules':{
+            let gam = await getBuffer(picak + 'Syarat Dan Ketentuan')
+            var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButImg(from, lang.rules(prefix), `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+}
+            break
+            
+            case 'donasi': case 'donate':{
+            var but = [
+          {
+            "urlButton": {
+              "displayText": "YouTube Creator",
+              "url": `${youtube}`
+            }
+          },
+          {
+            "urlButton": {
+              "displayText": "Rest Api's",              
+              "url": `${myweb}`
+
+            }
+          },
+          {
+            "quickReplyButton": {
+              "displayText": "Rules",
+"id": 'rules'
+            }
+          },
+          {
+            "quickReplyButton": {
+              "displayText": "Owner",
+"id": 'owner'
+            }
+          },
+{
+            "quickReplyButton": {
+              "displayText": "List Command",
 "id": 'command'
-            }
-          }
-        ]
-        await alpha.send5ButImg(from, lang.tos(ownernomer) , `© ${ownername}`,qris, but , { userJid: m.chat, quoted: m })
-    }
- break
-      
+            }
+          }
+        ]
+        await alpha.send5ButImg(from, lang.tos(ownernomer) , `© ${ownername}`,qris, but , { userJid: m.chat, quoted: m })
+    }
+break
+      
 //Random Anime
-				case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
-					reply(lang.wait())
-					axios.get(`https://api.waifu.pics/sfw/${command}`)
-					.then(({data}) => {
-						alpha.sendMediaAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
+case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
+reply(lang.wait())
+axios.get(`https://api.waifu.pics/sfw/${command}`)
+.then(({data}) => {
+alpha.sendMediaAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 
 
-					})
-					break
-				case 'waifu': case 'loli':
-					reply(lang.wait())
-					axios.get(`https://api.waifu.pics/sfw/waifu`)
-					.then(({data}) => {
-					alpha.sendImage(m.chat, data.url, lang.ok(), m)
-					})
-					break
+})
+break
+case 'waifu': case 'loli':
+reply(lang.wait())
+axios.get(`https://api.waifu.pics/sfw/waifu`)
+.then(({data}) => {
+alpha.sendImage(m.chat, data.url, lang.ok(), m)
+})
+break
 case 'stikerin':case 's': case 'sticker': case 'stiker': {
 if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
 if (/image/.test(mime)) {
@@ -905,250 +905,250 @@ reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sti
 }
 }
 break
-			case 'setppbot': case 'setpp': {
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                if (!quoted) throw 'Reply Image'
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
-                reply(lang.ok())
-                }
-                break
-			case 'setppgroup': case 'setppgrup': case 'setppgc': {
-                if (!m.isGroup) throw mess.group
-                if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
-                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                let media = await alpha.downloadAndSaveMediaMessage(quoted)
-                await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
-                reply(lang.ok())
-                }
-                break    
-			case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toAudio(media, 'mp4')
-            alpha.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
-            }
-            break
-            case 'tomp3': {
-            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toAudio(media, 'mp4')
-            alpha.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${alpha.user.name}.mp3`}, { quoted : m })
-            }
-            break
-            case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
-            let media = await quoted.download()
-            let audio = await toPTT(media, 'mp4')
-            alpha.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
-            }
-            break        
-            case 'webtonsearch': case 'webtoon':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Webtoons(q).then(async data => {
-                    let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*👍🏻 Like :* ${i.like}\n`
-                        txt += `*🤴🏻 Creator :* ${i.creator}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
-                    }
-                    await reply(txt)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'drakor':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Drakor(`${text}`).then(async data => {
-                    let txt = `*-----「 DRAKOR-SEARCH 」-----*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📆 Years :* ${i.years}\n`
-                        txt += `*🎥 Genre :* ${i.genre}\n`
-                        txt += `*📚 Url :* ${i.url}\n-----------------------------------------------------\n`
-                    }
-                    await sendFileFromUrl(from,data[0].thumbnail,txt,m)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'anime':{
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Anime(q).then(async data => {
-                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-                }
-            break
-            case 'character': case 'karakter':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Character(q).then(async data => {
-                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
-                    for (let i of data) {
-                        txt += `*📫 Character :* ${i.character}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'manga':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Manga(`${text}`).then(async data => {
-                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
-                    for (let i of data) {
-                         txt += `*📫 Title :* ${i.judul}\n`
-                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'soundcloud':{
-    	        if (!q) return reply(lang.wrongFormat(prefix))
-                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
-                if (!text.includes('soundcloud.com')) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-				zee.SoundCloud(`${text}`).then(async (data) => {
-                    let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
-                    txt += `*📟 Title :* ${data.title}\n`
-                    txt += `*🎞️ Duration :* ${data.duration}\n`
-					txt += `*🛠️ Quality :* ${data.medias[1].quality}\n`
-					txt += `*🚧 Ext :* ${data.medias[0].extension}\n`
-                    txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
-                    txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
-                    let gam = await getBuffer(data.thumbnail)
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
-				await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
-                })
-                    alpha.sendMessage(from, {audio : {url : data.medias[0].url}, fileName: `${data.title}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m})
-                    }
-                    break
-              
-            case 'twtdl': case 'twt': case 'twitterdl': case 'twitter':
-                if (!q) return reply(lang.wrongFormat(prefix))
-                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
-                if (!text.includes('twitter.com')) return reply(lang.wrongFormat(prefix))
-                await reply(lang.wait())
-                zee.Twitter(`${q}`).then(async data => {
-                    let txt = `*----「 TWITTER DOWNLOADER 」----*\n\n`
-                    txt += `*📫 Title :* ${data.title}\n`
-                    txt += `*📟 Quality :* ${data.medias[1].quality}\n`
-                    txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
-                    txt += `*📚 Url :* ${data.url}`
-                    sendFileFromUrl(from,data.medias[1].url,txt,m)
-                })
-                .catch((err) => {
-                    reply(lang.err())
-                })
-            break
-            case 'infochat': case 'sider': {
-                if (!m.quoted) m.reply('Reply Pesan')
-                let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
-                let teks = ''
-                for (let i of msg.userReceipt) {
-                    let read = i.readTimestamp
-                    let unread = i.receiptTimestamp
-                    let waktu = read ? read : unread
-                    teks += `⭔ @${i.userJid.split('@')[0]}\n`
-                    teks += ` ┗━⭔ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
-                }
-                alpha.sendTextWithMentions(m.chat, teks, m)
-            }
-            break
-            case 'q': case 'quoted': {
-		if (!m.quoted) return reply('Reply Pesannya!!')
-		let wokwol = await alpha.serializeM(await m.getQuotedObj())
-		if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
-		await wokwol.quoted.copyNForward(m.chat, true)
-            }
-	    break
-            case 'listchat': case 'listpc': {
-            	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *LIST PERSONAL CHAT*\n\nTotal Chat : ${anu.length} Chat\n\n`
-                 for (let i of anu) {
-                     let nama = store.messages[i].array[0].pushName
-                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
-                 }
-                 alpha.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-             case 'liston': case 'listonline':{
-             	if (!isGroupAdmins && !isGroupOwner) return reply(mess.admin)
-             	   let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
-                    let online = [...Object.keys(store.presences[id]), botNumber]
-                    alpha.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
-                    }
-                    break
-                 case 'olistgc': {
+case 'setppbot': case 'setpp': {
+                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                if (!quoted) throw 'Reply Image'
+                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                let media = await alpha.downloadAndSaveMediaMessage(quoted)
+                await alpha.updateProfilePicture(alpha.user.id, { url: media }).catch((err) => fs.unlinkSync(media))
+                reply(lang.ok())
+                }
+                break
+case 'setppgroup': case 'setppgrup': case 'setppgc': {
+                if (!m.isGroup) throw mess.group
+                if (!m.isGroup && !isBotAdmins && !isGroupAdmins) return reply(lang.adminOnly())
+                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                let media = await alpha.downloadAndSaveMediaMessage(quoted)
+                await alpha.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
+                reply(lang.ok())
+                }
+                break    
+case 'toaud': case 'toaudio': {
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
+            m.reply(mess.wait)
+            let media = await quoted.download()
+            let audio = await toAudio(media, 'mp4')
+            alpha.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
+            }
+            break
+            case 'tomp3': {
+            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            m.reply(mess.wait)
+            let media = await quoted.download()
+            let audio = await toAudio(media, 'mp4')
+            alpha.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${alpha.user.name}.mp3`}, { quoted : m })
+            }
+            break
+            case 'tovn': case 'toptt': {
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
+            m.reply(mess.wait)
+            let media = await quoted.download()
+            let audio = await toPTT(media, 'mp4')
+            alpha.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+            }
+            break        
+            case 'webtonsearch': case 'webtoon':
+                if (!q) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Webtoons(q).then(async data => {
+                    let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*👍🏻 Like :* ${i.like}\n`
+                        txt += `*🤴🏻 Creator :* ${i.creator}\n`
+                        txt += `*🎥 Genre :* ${i.genre}\n`
+                        txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
+                    }
+                    await reply(txt)
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+            break
+            case 'drakor':
+                if (!q) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Drakor(`${text}`).then(async data => {
+                    let txt = `*-----「 DRAKOR-SEARCH 」-----*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*📆 Years :* ${i.years}\n`
+                        txt += `*🎥 Genre :* ${i.genre}\n`
+                        txt += `*📚 Url :* ${i.url}\n-----------------------------------------------------\n`
+                    }
+                    await sendFileFromUrl(from,data[0].thumbnail,txt,m)
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+            break
+            case 'anime':{
+                if (!q) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Anime(q).then(async data => {
+                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+                }
+            break
+            case 'character': case 'karakter':
+                if (!q) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Character(q).then(async data => {
+                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Character :* ${i.character}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+            break
+            case 'manga':
+                if (!q) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Manga(`${text}`).then(async data => {
+                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
+                    for (let i of data) {
+                         txt += `*📫 Title :* ${i.judul}\n`
+                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+            break
+            case 'soundcloud':{
+            if (!q) return reply(lang.wrongFormat(prefix))
+                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
+                if (!text.includes('soundcloud.com')) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+zee.SoundCloud(`${text}`).then(async (data) => {
+                    let txt = `*----「 SOUNDCLOUD DOWNLOAD 」----*\n\n`
+                    txt += `*📟 Title :* ${data.title}\n`
+                    txt += `*🎞️ Duration :* ${data.duration}\n`
+txt += `*🛠️ Quality :* ${data.medias[1].quality}\n`
+txt += `*🚧 Ext :* ${data.medias[0].extension}\n`
+                    txt += `*💾 Size :* ${data.medias[0].formattedSize}\n`
+                    txt += `*📚 Url Source :* ${data.url}\n\n`
+                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
+                    let gam = await getBuffer(data.thumbnail)
+                    var but = [
+{
+"urlButton": {
+"displayText": "Website",
+"url": `${myweb}`
+}
+}
+]
+await alpha.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+                })
+                    alpha.sendMessage(from, {audio : {url : data.medias[0].url}, fileName: `${data.title}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m})
+                    }
+                    break
+              
+            case 'twtdl': case 'twt': case 'twitterdl': case 'twitter':
+                if (!q) return reply(lang.wrongFormat(prefix))
+                if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
+                if (!text.includes('twitter.com')) return reply(lang.wrongFormat(prefix))
+                await reply(lang.wait())
+                zee.Twitter(`${q}`).then(async data => {
+                    let txt = `*----「 TWITTER DOWNLOADER 」----*\n\n`
+                    txt += `*📫 Title :* ${data.title}\n`
+                    txt += `*📟 Quality :* ${data.medias[1].quality}\n`
+                    txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
+                    txt += `*📚 Url :* ${data.url}`
+                    sendFileFromUrl(from,data.medias[1].url,txt,m)
+                })
+                .catch((err) => {
+                    reply(lang.err())
+                })
+            break
+            case 'infochat': case 'sider': {
+                if (!m.quoted) m.reply('Reply Pesan')
+                let msg = await m.getQuotedObj()
+                if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                let teks = ''
+                for (let i of msg.userReceipt) {
+                    let read = i.readTimestamp
+                    let unread = i.receiptTimestamp
+                    let waktu = read ? read : unread
+                    teks += `⭔ @${i.userJid.split('@')[0]}\n`
+                    teks += ` ┗━⭔ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⭔ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                }
+                alpha.sendTextWithMentions(m.chat, teks, m)
+            }
+            break
+            case 'q': case 'quoted': {
+if (!m.quoted) return reply('Reply Pesannya!!')
+let wokwol = await alpha.serializeM(await m.getQuotedObj())
+if (!wokwol.quoted) return reply('Pesan Yang anda reply tidak mengandung reply')
+await wokwol.quoted.copyNForward(m.chat, true)
+            }
+    break
+            case 'listchat': case 'listpc': {
+            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+                 let teks = `⬣ *LIST PERSONAL CHAT*\n\nTotal Chat : ${anu.length} Chat\n\n`
+                 for (let i of anu) {
+                     let nama = store.messages[i].array[0].pushName
+                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
+                 }
+                 alpha.sendTextWithMentions(m.chat, teks, m)
+             }
+             break
+             case 'liston': case 'listonline':{
+             if (!isGroupAdmins && !isGroupOwner) return reply(mess.admin)
+                let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+                    let online = [...Object.keys(store.presences[id]), botNumber]
+                    alpha.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    }
+                    break
+                 case 'olistgc': {
 
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 getGroups = await alpha.groupFetchAllParticipating()
@@ -1162,35 +1162,35 @@ teks += `🐥 *Nama :* ${metadata.subject}\n👤 *Owner :* @${groupMetadata.owne
 alpha.sendTextWithMentions(m.chat, teks, m)
 }
 break
-               case 'listgroup': case 'listgc': {
-                	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
-                 for (let i of anu) {
-                     let metadata = await alpha.groupMetadata(i)
-                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
-                 }
-                 alpha.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-             case 'setname': case 'setsubject': {
-                if (!m.isGroup) return reply(mess.group)
-				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
-                await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
-            }
-            break
-             case 'setdesc': case 'setdesk': case 'setdeskripsi':{
-             	if (!m.isGroup) return reply(mess.group)
-				if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-				if (!isBotAdmins) return reply(lang.botNotAdmin())
-				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
-				alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
-				reply(lang.ok())
-				}
-				break
-            case 'setppgrup': case 'setppgc': {
+               case 'listgroup': case 'listgc': {
+                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+                 let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
+                 for (let i of anu) {
+                     let metadata = await alpha.groupMetadata(i)
+                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${groupMetadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                 }
+                 alpha.sendTextWithMentions(m.chat, teks, m)
+             }
+             break
+             case 'setname': case 'setsubject': {
+                if (!m.isGroup) return reply(mess.group)
+if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+if (!isBotAdmins) return reply(lang.botNotAdmin())
+if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+                await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
+            }
+            break
+             case 'setdesc': case 'setdesk': case 'setdeskripsi':{
+             if (!m.isGroup) return reply(mess.group)
+if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+if (!isBotAdmins) return reply(lang.botNotAdmin())
+if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
+reply(lang.ok())
+}
+break
+            case 'setppgrup': case 'setppgc': {
 if (!m.isGroup) return reply(lang.groupOnly())
 if (!isBotAdmins) return reply(lang.botNotAdmin())
 if (!isGroupAdmins && !isGroupOwner && !isBotAdmins) return reply(lang.adminOnly())
@@ -1201,100 +1201,100 @@ await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unli
 reply(lang.ok())
 }
 break
-            case 'join': {
-                if (!isCreator) return reply(lang.ownerOnly())
-                if (!text) throw 'Masukkan Link Group!'
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
-                reply(lang.wait())
-                let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-            }
-            break
-            case 'tagall': case 'infoall':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
-		      	for (let mem of participants) {
-		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
-				}
-                tekss += `\n⋙ *${botname}* ⋘`
-                alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
-            break
-            case 'hidetag':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
-            break
-        /**    case 'kick': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di kick !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'add': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
-				let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break**/
-			case 'promote': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())	
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'demote': {
-				if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di demote !`)
-				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-				}
-				break
-			case 'revoke':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let link = await alpha.groupRevokeInvite(from)
-                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
-            break
-            case 'out':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-               reply('Sayonara~ 👋').then(async res => await alpha.groupLeave(from))
-            break
-            case 'group': case 'grup':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                if (args[0] === 'open'){
-                    await alpha.groupSettingUpdate(from, 'not_announcement')
-		 		   reply(lang.ok())
-                } else if (args[0] === 'close'){
-                    await alpha.groupSettingUpdate(from, 'announcement')
-                    reply(lang.ok())
-                } else {
-                    alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{buttonId: 'group open', buttonText: {displayText: 'Open'}, type: 1},{buttonId: 'group close', buttonText: {displayText: 'Close'}, type: 1}], {quoted: fgif})
-                }
-            break 
-			case 'afk': {
+            case 'join': {
+                if (!isCreator) return reply(lang.ownerOnly())
+                if (!text) throw 'Masukkan Link Group!'
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
+                reply(lang.wait())
+                let result = args[0].split('https://chat.whatsapp.com/')[1]
+                await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+            }
+            break
+            case 'tagall': case 'infoall':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
+      for (let mem of participants) {
+            tekss += `🏅 @${mem.id.split('@')[0]}\n`
+}
+                tekss += `\n⋙ *${botname}* ⋘`
+                alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
+            break
+            case 'hidetag':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
+            break
+        /**    case 'kick': {
+if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di kick !`)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+}
+break
+case 'add': {
+if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+}
+break**/
+case 'promote': {
+if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+}
+break
+case 'demote': {
+if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di demote !`)
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+}
+break
+case 'revoke':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                let link = await alpha.groupRevokeInvite(from)
+                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
+            break
+            case 'out':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+               reply('Sayonara~ 👋').then(async res => await alpha.groupLeave(from))
+            break
+            case 'group': case 'grup':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
+                if (args[0] === 'open'){
+                    await alpha.groupSettingUpdate(from, 'not_announcement')
+   reply(lang.ok())
+                } else if (args[0] === 'close'){
+                    await alpha.groupSettingUpdate(from, 'announcement')
+                    reply(lang.ok())
+                } else {
+                    alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{buttonId: 'group open', buttonText: {displayText: 'Open'}, type: 1},{buttonId: 'group close', buttonText: {displayText: 'Close'}, type: 1}], {quoted: fgif})
+                }
+            break 
+case 'afk': {
 if (!m.isGroup) return reply(lang.groupOnly())
 let user = global.db.data.users[m.sender]
 user.afkTime = + new Date
 user.afkReason = text
 m.reply(`${m.pushName} Telah Afk Dengan Alasan ${text ? ': ' + text : 'Nothing'}`)
 }
-break  
+break  
 case 'family100': {
 if ('family100'+m.chat in _family100) {
 m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
@@ -1305,7 +1305,7 @@ let random = anu[Math.floor(Math.random() * anu.length)]
 let hasil = `*Jawablah Pertanyaan Berikut :*\n${random.soal}\n\nTerdapat *${random.jawaban.length}* Jawaban ${random.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}`.trim()
 _family100['family100'+m.chat] = {
 id: 'family100'+m.chat,
- pesan: await alpha.sendText(m.chat, hasil, m),
+pesan: await alpha.sendText(m.chat, hasil, m),
 ...random,
 terjawab: Array.from(random.jawaban, () => false),
 hadiah: 6,
@@ -1396,7 +1396,7 @@ alpha.sendButtonText(m.chat, [{ buttonId: 'tebak kabupaten', buttonText: { displ
 delete tebakkabupaten[m.sender.split('@')[0]]
 }
 }
- case 'tebakkimia':{
+case 'tebakkimia':{
 if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) return reply(`Masih Ada Sesi Yang Belum Diselesaikan!`)
 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkimia.json')
 let result = anu[Math.floor(Math.random() * anu.length)]
@@ -1481,233 +1481,233 @@ tekateki[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
 })
 await sleep(60000)
 if (tekateki.hasOwnProperty(m.sender.split('@')[0])) {
-	alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `Waktu Habis\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
+alpha.sendButtonText(m.chat, [{ buttonId: 'tekateki', buttonText: { displayText: 'Teka Teki' }, type: 1 }], `Waktu Habis\nJawaban : ${result.jawaban}` , `© ${ownername}`, m)
 delete tekateki[m.sender.split('@')[0]]
 }
 }
 break
-            case 'setmenu':{
-            	if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
-            const listhades = ['templateLocation', 'templateTenor','list', 'katalog', 'katalog2']
-			alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' +  pushname, 'KLIK DISINI', [
-							{
-								"title": "Set Menu-1",
-								"rows": [
-									{
-										"title": "Template Button Location",
-										"rowId": "setmenu templateLocation"
-									}
-								]
-							},
-							{
-								"title": "Set Menu-2",
-								"rows": [
-									{
-										"title": "Template Button Tenor",
-										"rowId": "setmenu templateTenor"
-									}
-								]
-							},{
-								"title": "Set Menu-3",
-								"rows": [
-									{
-										"title": "Menu Katalog",
-										"rowId": "setmenu katalog"
-									}
-								]
-							},{
-								"title": "Set Menu-4",
-								"rows": [
-									{
-										"title": "Menu Katalog Diskon",
-										"rowId": "setmenu katalog2"
-									}
-								]
-							},{
-								"title": "Set Menu-5",
-								"rows": [
-									{
-										"title": "Menu List Message",
-										"rowId": "setmenu list"
-									}
-								]
-							}], {quoted:fgif})
-                if (!listhades.includes(text)) return alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' + pushname, 'KLIK DISINI', [
-							{
-								"title": "Set Menu-1",
-								"rows": [
-									{
-										"title": "Template Button Location",
-										"rowId": "setmenu templateLocation"
-									}
-								]
-							},
-							{
-								"title": "Set Menu-2",
-								"rows": [
-									{
-										"title": "Template Button Tenor",
-										"rowId": "setmenu templateTenor"
-									}
-								]
-							},{
-								"title": "Set Menu-3",
-								"rows": [
-									{
-										"title": "Menu Katalog",
-										"rowId": "setmenu katalog"
-									}
-								]
-							},{
-								"title": "Set Menu-4",
-								"rows": [
-									{
-										"title": "Menu Katalog Diskon",
-										"rowId": "setmenu katalog2"
-									}
-								]
-							},{
-								"title": "Set Menu-5",
-								"rows": [
-									{
-										"title": "Menu List Message",
-										"rowId": "setmenu list"
-									}
-								]
-							}], {quoted:fgif})
-                typemenu = text
-		 		   reply(lang.ok())
-		}
-            break
-				case 'menu':{
-					if(typemenu == 'templateLocation'){
-						await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/Hnb8UOsuN4t5hSEMNTUdft'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
-							}
-						if(typemenu == 'templateTenor'){
-							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/KBIERXGD8wo9MzB9J2PUWl'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
-						 }
-						if(typemenu == 'katalog'){
-							alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
-							}
-						if(typemenu == 'katalog2'){
-							alpha.sendKatalog2(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
-							}
-						if(typemenu == 'list'){
-							alpha.sendListMenu(m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *Name* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `Selamat ${salam} ${pushname} ☺️`, `CLICK HERE`, {quoted:fgif})
-						}
-					}
-					break    
-	case 'allmenu':{
-			await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
-		}
-	break   
-	case 'infocmd': case'infomenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-      }
-  break 
-  case 'storecmd': case'storemenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-      }
-  break 
-	case 'ownercmd': case'ownermenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-      }
-  break 
-  case 'databasecmd': case'databasemenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-      }
-  break 
-  case 'groupcmd': case 'groupmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+            case 'setmenu':{
+            if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
+            const listhades = ['templateLocation', 'templateTenor','list', 'katalog', 'katalog2']
+alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' +  pushname, 'KLIK DISINI', [
+{
+"title": "Set Menu-1",
+"rows": [
+{
+"title": "Template Button Location",
+"rowId": "setmenu templateLocation"
 }
-        break       
-    case 'animecmd': case 'animemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},
+{
+"title": "Set Menu-2",
+"rows": [
+{
+"title": "Template Button Tenor",
+"rowId": "setmenu templateTenor"
 }
-         break 
-            case 'tagcmd': case 'tagmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},{
+"title": "Set Menu-3",
+"rows": [
+{
+"title": "Menu Katalog",
+"rowId": "setmenu katalog"
 }
-         break 
-        case 'stalkcmd': case 'stalkmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},{
+"title": "Set Menu-4",
+"rows": [
+{
+"title": "Menu Katalog Diskon",
+"rowId": "setmenu katalog2"
 }
-         break         
-        case 'searchcmd': case 'searchmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-       }
-  break 
-        case 'convertercmd': case 'convertmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},{
+"title": "Set Menu-5",
+"rows": [
+{
+"title": "Menu List Message",
+"rowId": "setmenu list"
 }
-         break 
-        case 'stickercmd': case 'stickermenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+}], {quoted:fgif})
+                if (!listhades.includes(text)) return alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' + pushname, 'KLIK DISINI', [
+{
+"title": "Set Menu-1",
+"rows": [
+{
+"title": "Template Button Location",
+"rowId": "setmenu templateLocation"
 }
-         break 
-        case 'stickercmd2': case 'stickermenu2':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},
+{
+"title": "Set Menu-2",
+"rows": [
+{
+"title": "Template Button Tenor",
+"rowId": "setmenu templateTenor"
 }
-         break 
-        case 'downloadercmd': case 'downloadmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},{
+"title": "Set Menu-3",
+"rows": [
+{
+"title": "Menu Katalog",
+"rowId": "setmenu katalog"
 }
-         break 
-        case 'ranimecmd': case 'animemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+]
+},{
+"title": "Set Menu-4",
+"rows": [
+{
+"title": "Menu Katalog Diskon",
+"rowId": "setmenu katalog2"
 }
-        break 
-        case 'nsfwcmd': case 'nsfwcommand':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-        }
+]
+},{
+"title": "Set Menu-5",
+"rows": [
+{
+"title": "Menu List Message",
+"rowId": "setmenu list"
+}
+]
+}], {quoted:fgif})
+                typemenu = text
+   reply(lang.ok())
+}
+            break
+case 'menu':{
+if(typemenu == 'templateLocation'){
+await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/B71vGkmQmpz4WI6izA8g8Z'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
+}
+if(typemenu == 'templateTenor'){
+alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/KBIERXGD8wo9MzB9J2PUWl'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
+}
+if(typemenu == 'katalog'){
+alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
+}
+if(typemenu == 'katalog2'){
+alpha.sendKatalog2(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
+}
+if(typemenu == 'list'){
+alpha.sendListMenu(m.chat, `╭─⬣「 _*INFO USER*_ 」⬣\n│  *Name* : ${pushname}\n│  *Number* : ${sender.split("@")[0]}\n│  *Status* : ${isCreator? ` Owner️ ${botname}` :`User ${botname}`}\n╰─⬣\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : ${ownername}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣\n\n╭─⬣「 _*INDONESIAN TIME*_ 」⬣\n│ *Wib* : ${time}\n│ *Wita* : ${wita}\n│ *Wit* : ${wit}  \n╰─⬣`, `© ${ownername}`, `Selamat ${salam} ${pushname} ☺️`, `CLICK HERE`, {quoted:fgif})
+}
+}
+break    
+case 'allmenu':{
+await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + lang.listMenu(time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "Rules","id": 'rules'}}] )
+}
+break   
+case 'infocmd': case'infomenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+      }
+  break 
+  case 'storecmd': case'storemenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+      }
+  break 
+case 'ownercmd': case'ownermenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+      }
+  break 
+  case 'databasecmd': case'databasemenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+      }
+  break 
+  case 'groupcmd': case 'groupmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+        break       
+    case 'animecmd': case 'animemenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+            case 'tagcmd': case 'tagmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+        case 'stalkcmd': case 'stalkmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break         
+        case 'searchcmd': case 'searchmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+       }
+  break 
+        case 'convertercmd': case 'convertmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+        case 'stickercmd': case 'stickermenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+        case 'stickercmd2': case 'stickermenu2':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+        case 'downloadercmd': case 'downloadmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+         break 
+        case 'ranimecmd': case 'animemenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+}
+        break 
+        case 'nsfwcmd': case 'nsfwcommand':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        }
 break 
 case 'textprocmd': case 'textpromenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-        break 
-        case 'othercmd': case 'othermenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        break 
+        case 'othercmd': case 'othermenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-        break 
-        case 'gamecmd': case 'gamemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        break 
+        case 'gamecmd': case 'gamemenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-         break 
-         case 'soundcmd': case 'soundmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+         break 
+         case 'soundcmd': case 'soundmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-         break 
-         case 'logocmd': case 'logomenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+         break 
+         case 'logocmd': case 'logomenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-         break 
-         case 'islamcmd': case 'islammenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+         break 
+         case 'islamcmd': case 'islammenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-         break 
-        case 'asupancmd': case 'asupanmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+         break 
+        case 'asupancmd': case 'asupanmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-        break 
-        case 'cecancmd': case 'cecanmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        break 
+        case 'cecancmd': case 'cecanmenu':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
-        break 
-        case 'primbonmenu': case 'primboncmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-        }
+        break 
+        case 'primbonmenu': case 'primboncmd':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        }
 break 
-        case 'telestc': case 'telecmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-        }
+        case 'telestc': case 'telecmd':{
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        }
 break 
 case 'ephotomenu': case 'ephotocmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-        }
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+        }
 break 
 case 'thanksto': case 'tqto':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
-         }
+alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+         }
 break 
 case 'take':case 'wm':{
 if (!quoted) return reply(`Kirim/Reply Gambar/Video Dengan Caption ${prefix + command}\n\nDurasi Sticker Video 1-9 Detik☕`)
@@ -1738,227 +1738,227 @@ reply(`Exif Berhasil Diubah Menjadi\n\nPackname : ${global.packname}\nAuthor : $
 }
 
 break
-			case 'nomerhoki': case 'nomorhoki': {
-                if (!Number(text)) throw `Example : ${prefix + command} 887435047326`
-                let anu = await primbon.nomer_hoki(Number(text))
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
-            }
-            break
-            case 'artimimpi': case 'tafsirmimpi': {
-                if (!text) throw `Example : ${prefix + command} belanja`
-                let anu = await primbon.tafsir_mimpi(text)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, m)
-            }
-            break
-			case 'ramalanjodoh': case 'ramaljodoh': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
-                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
-                let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'ramalanjodohbali': case 'ramaljodohbali': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
-                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
-                let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'suamiistri': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
-                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
-                let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama Suami :* ${anu.message.suami.nama}\n⭔ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n⭔ *Nama Istri :* ${anu.message.istri.nama}\n⭔ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'ramalancinta': case 'ramalcinta': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
-                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
-                let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'artinama': {
-                if (!text) throw `Example : ${prefix + command} Zeeone`
-                let anu = await primbon.arti_nama(text)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'kecocokannama': case 'cocoknama': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004`
-                let [nama, tgl, bln, thn] = text.split`,`
-                let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Life Path :* ${anu.message.life_path}\n⭔ *Destiny :* ${anu.message.destiny}\n⭔ *Destiny Desire :* ${anu.message.destiny_desire}\n⭔ *Personality :* ${anu.message.personality}\n⭔ *Persentase :* ${anu.message.persentase_kecocokan}`, m)
-            }
-            break
-            case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
-                if (!text) throw `Example : ${prefix + command} Zeeone|Clara`
-                let [nama1, nama2] = text.split`|`
-                let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendImage(m.chat,  anu.message.gambar, `⭔ *Nama Anda :* ${anu.message.nama_anda}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
-            }
-            break
-            case 'jadianpernikahan': case 'jadiannikah': {
-                if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, m)
-            }
-            break
-            case 'sifatusaha': {
-                if (!ext)throw `Example : ${prefix+ command} 28, 12, 2021`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Usaha :* ${anu.message.usaha}`, m)
-            }
-            break
-            case 'rejeki': case 'rezeki': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Rezeki :* ${anu.message.rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'pekerjaan': case 'kerja': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Pekerjaan :* ${anu.message.pekerjaan}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'ramalannasib': case 'ramalnasib': case 'nasib': {
-                if (!text) throw `Example : 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.ramalan_nasib(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Angka Akar :* ${anu.message.angka_akar}\n⭔ *Sifat :* ${anu.message.sifat}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
-            }
-            break
-            case 'potensipenyakit': case 'penyakit': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Sektor :* ${anu.message.sektor}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'artitarot': case 'tarot': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendImage(m.chat, anu.message.image, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Simbol Tarot :* ${anu.message.simbol_tarot}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'fengshui': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 1, 2004\n\nNote : ${prefix + command} Nama, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
-                let [nama, gender, tahun] = text.split`,`
-                let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tahun_lahir}\n⭔ *Gender :* ${anu.message.jenis_kelamin}\n⭔ *Angka Kua :* ${anu.message.angka_kua}\n⭔ *Kelompok :* ${anu.message.kelompok}\n⭔ *Karakter :* ${anu.message.karakter}\n⭔ *Sektor Baik :* ${anu.message.sektor_baik}\n⭔ *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
-            }
-            break
-            case 'haribaik': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.petung_hari_baik(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Kala Tinantang :* ${anu.message.kala_tinantang}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'harisangar': case 'taliwangke': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'harinaas': case 'harisial': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, m)
-            }
-            break
-            case 'nagahari': case 'harinaga': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'arahrejeki': case 'arahrezeki': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'peruntungan': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
-                let [nama, tgl, bln, thn, untuk] = text.split`,`
-                let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'weton': case 'wetonjawa': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.weton_jawa(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
-            }
-            break
-            case 'sifat': case 'karakter': {
-                if (!text) throw `Example : ${prefix + command} Zeeone,12, 1, 2004`
-                let [nama, tgl, bln, thn] = text.split`,`
-                let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Garis Hidup :* ${anu.message.garis_hidup}`, m)
-            }
-            break
-            case 'keberuntungan': {
-                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004`
-                let [nama, tgl, bln, thn] = text.split`,`
-                let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, m)
-            }
-            break
-            case 'memancing': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2022`
-                let [tgl, bln, thn] = text.split`,`
-                let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break
-            case 'masasubur': {
-                if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} hari pertama menstruasi, siklus`
-                let [tgl, bln, thn, siklus] = text.split`,`
-                let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
-                if (anu.status == false) return m.reply(anu.message)
-                alpha.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
-            }
-            break 
+case 'nomerhoki': case 'nomorhoki': {
+                if (!Number(text)) throw `Example : ${prefix + command} 887435047326`
+                let anu = await primbon.nomer_hoki(Number(text))
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
+            }
+            break
+            case 'artimimpi': case 'tafsirmimpi': {
+                if (!text) throw `Example : ${prefix + command} belanja`
+                let anu = await primbon.tafsir_mimpi(text)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, m)
+            }
+            break
+case 'ramalanjodoh': case 'ramaljodoh': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
+                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
+                let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'ramalanjodohbali': case 'ramaljodohbali': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
+                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
+                let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'suamiistri': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
+                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
+                let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama Suami :* ${anu.message.suami.nama}\n⭔ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n⭔ *Nama Istri :* ${anu.message.istri.nama}\n⭔ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'ramalancinta': case 'ramalcinta': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, Clara, 22, 2, 2004`
+                let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
+                let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'artinama': {
+                if (!text) throw `Example : ${prefix + command} Zeeone`
+                let anu = await primbon.arti_nama(text)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'kecocokannama': case 'cocoknama': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004`
+                let [nama, tgl, bln, thn] = text.split`,`
+                let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Life Path :* ${anu.message.life_path}\n⭔ *Destiny :* ${anu.message.destiny}\n⭔ *Destiny Desire :* ${anu.message.destiny_desire}\n⭔ *Personality :* ${anu.message.personality}\n⭔ *Persentase :* ${anu.message.persentase_kecocokan}`, m)
+            }
+            break
+            case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
+                if (!text) throw `Example : ${prefix + command} Zeeone|Clara`
+                let [nama1, nama2] = text.split`|`
+                let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendImage(m.chat,  anu.message.gambar, `⭔ *Nama Anda :* ${anu.message.nama_anda}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
+            }
+            break
+            case 'jadianpernikahan': case 'jadiannikah': {
+                if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, m)
+            }
+            break
+            case 'sifatusaha': {
+                if (!ext)throw `Example : ${prefix+ command} 28, 12, 2021`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Usaha :* ${anu.message.usaha}`, m)
+            }
+            break
+            case 'rejeki': case 'rezeki': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Rezeki :* ${anu.message.rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'pekerjaan': case 'kerja': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Pekerjaan :* ${anu.message.pekerjaan}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'ramalannasib': case 'ramalnasib': case 'nasib': {
+                if (!text) throw `Example : 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.ramalan_nasib(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Angka Akar :* ${anu.message.angka_akar}\n⭔ *Sifat :* ${anu.message.sifat}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
+            }
+            break
+            case 'potensipenyakit': case 'penyakit': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Sektor :* ${anu.message.sektor}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'artitarot': case 'tarot': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendImage(m.chat, anu.message.image, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Simbol Tarot :* ${anu.message.simbol_tarot}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'fengshui': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 1, 2004\n\nNote : ${prefix + command} Nama, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
+                let [nama, gender, tahun] = text.split`,`
+                let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tahun_lahir}\n⭔ *Gender :* ${anu.message.jenis_kelamin}\n⭔ *Angka Kua :* ${anu.message.angka_kua}\n⭔ *Kelompok :* ${anu.message.kelompok}\n⭔ *Karakter :* ${anu.message.karakter}\n⭔ *Sektor Baik :* ${anu.message.sektor_baik}\n⭔ *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
+            }
+            break
+            case 'haribaik': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.petung_hari_baik(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Kala Tinantang :* ${anu.message.kala_tinantang}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'harisangar': case 'taliwangke': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'harinaas': case 'harisial': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, m)
+            }
+            break
+            case 'nagahari': case 'harinaga': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'arahrejeki': case 'arahrezeki': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'peruntungan': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
+                let [nama, tgl, bln, thn, untuk] = text.split`,`
+                let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'weton': case 'wetonjawa': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2004`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.weton_jawa(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
+            }
+            break
+            case 'sifat': case 'karakter': {
+                if (!text) throw `Example : ${prefix + command} Zeeone,12, 1, 2004`
+                let [nama, tgl, bln, thn] = text.split`,`
+                let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Garis Hidup :* ${anu.message.garis_hidup}`, m)
+            }
+            break
+            case 'keberuntungan': {
+                if (!text) throw `Example : ${prefix + command} Zeeone, 12, 1, 2004`
+                let [nama, tgl, bln, thn] = text.split`,`
+                let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, m)
+            }
+            break
+            case 'memancing': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2022`
+                let [tgl, bln, thn] = text.split`,`
+                let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break
+            case 'masasubur': {
+                if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} hari pertama menstruasi, siklus`
+                let [tgl, bln, thn, siklus] = text.split`,`
+                let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
+                if (anu.status == false) return m.reply(anu.message)
+                alpha.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
+            }
+            break 
 //ephoto360
 case 'youtubegold':case 'youtubesilver':case 'facebookgold':case 'facebooksilver':case 'instagramgold':case 'instagramsilver':case 'twittergold':case 'twittersilver':case 'retrotext':case 'halloweenbats':case 'texthalloween':case 'cardhalloween':case 'birthdaycake':case 'thundertext':case 'icetext':case 'milkcake':case 'snowontext':case 'metalstar':case 'dragonfire':case 'zombie3d':case 'merrycard':case 'generalexam': case 'viettel':case 'embroider':case 'graffititext':case 'graffititext2':case 'graffititext3':case 'covergraffiti':case 'moderngold':case 'capercut':case 'lovecard':case 'heartflashlight':case 'heartcup':case 'sunglightshadow':case 'graffiti3d':case 'moderngoldsilver':case 'moderngold2':case 'modengold3':case 'fabrictext':case 'masteryavatar':case 'messagecoffee':case 'announofwin':case 'writeblood':case 'horrorletter':case 'writehorror':case 'shirtclub':case 'angelwing':case 'christmasseason':case 'projectyasuo':case 'lovelycute':case 'womansday':case 'covergamepubg':case 'nameonheart':case 'funnyhalloween':case 'lightningpubg':case 'greetingcardvideo': case 'christmascard': case 'galaxybat':case 'writegalaxy':case 'starsnight':case 'noeltext':case 'textcakes':case 'pubgbirthday':case 'galaxywallpaper':case 'pubgglicthvideo': case 'pubgmascotlogo':case 'realembroidery':case 'vintagetelevision':case 'funnyanimations':case 'glowingtext':case 'textonglass':case 'cartoonstyle':case 'multicolor':case 'watercolor2':case 'textsky':case 'summerbeach':case '1917text':case 'puppycute':case 'rosebirthday':{
 if (!text) return reply(`Kirim perintah ${prefix + command} *zeeone*`)
@@ -1966,8 +1966,8 @@ reply(lang.wait())
 let texpro = global.api('alfa', '/api/ephoto360/'+command, {text:text}, 'apikey')
 sendFileFromUrl(from, texpro, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
 break
 case 'steellettering':case 'letterstext':case 'barcashirt':case 'premiercup':case 'stylepoligon':case 'lifebuoys':case 'juventusshirt':{
@@ -1980,8 +1980,8 @@ reply(lang.wait())
 let texpro = global.api('alfa', '/api/ephoto360/'+command, {text:m1 , text2:m2}, 'apikey')
 sendFileFromUrl(from, texpro, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
 break
 
@@ -1993,64 +1993,64 @@ reply(lang.wait())
 let texpro = global.api('alfa', '/api/textpro/'+command, {text:text}, 'apikey')
 sendFileFromUrl(from, texpro, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
 break
-case 'chika': case 'rikagusriani':  case 'bocil': case 'geayubi': case 'santuy': case 'ukhty': case 'asupan':  case 'delvira': case 'ayu': case 'bunga': case 'aura': case 'nisa': case 'ziva': case 'yana': case 'viona': case 'syania': case 'riri': case 'syifa': case 'mama_gina': case 'alcakenya': case 'mangayutri': {
-	reply(lang.wait())
-	let to = global.api('alfa', '/api/asupan/'+command, {}, 'apikey')
+case 'chika': case 'rikagusriani':  case 'bocil': case 'geayubi': case 'santuy': case 'ukhty': case 'asupan':  case 'delvira': case 'ayu': case 'bunga': case 'aura': case 'nisa': case 'ziva': case 'yana': case 'viona': case 'syania': case 'riri': case 'syifa': case 'mama_gina': case 'alcakenya': case 'mangayutri': {
+reply(lang.wait())
+let to = global.api('alfa', '/api/asupan/'+command, {}, 'apikey')
 sendFileFromUrl(from, to, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
 break
 case 'china': case 'indonesia': case 'malaysia': case 'thailand': case 'korea': case 'japan': case 'vietnam': case 'jenni': case 'jiso': case 'lisa': case 'rose': {
-	let to = global.api('alfa', '/api/cecan/'+command, {}, 'apikey')
+let to = global.api('alfa', '/api/cecan/'+command, {}, 'apikey')
 reply(lang.wait())
 sendFileFromUrl(from, to, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
-	break
+break
 case 'hentai': {
-			if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
-                reply(lang.wait())
-                anu = await hentai()
-                result = anu[Math.floor(Math.random(), anu.length)]
-                alpha.sendMessage(m.chat, { video: { url: result.video_1 }, caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.category}\n⭔ Mimetype : ${result.type}\n⭔ Views : ${result.views_count}\n⭔ Shares : ${result.share_count}\n⭔ Source : ${result.link}\n⭔ Media Url : ${result.video_1}` }, { quoted: m })
-            }
-            break
+if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
+                reply(lang.wait())
+                anu = await hentai()
+                result = anu[Math.floor(Math.random(), anu.length)]
+                alpha.sendMessage(m.chat, { video: { url: result.video_1 }, caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.category}\n⭔ Mimetype : ${result.type}\n⭔ Views : ${result.views_count}\n⭔ Shares : ${result.share_count}\n⭔ Source : ${result.link}\n⭔ Media Url : ${result.video_1}` }, { quoted: m })
+            }
+            break
 case 'solog': case 'cuddle': case 'cum': case 'les': case 'erokemo': case 'bj': case 'pwankg': case 'pat': case 'poke': case 'feed': case 'nsfw_neko_gif': case 'pussy': case 'feetg': case 'baka': case 'hug': case 'tickle': case 'spank': case 'kuni': case 'classic': case 'boobs': case 'anal': case 'ngif':
-		if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
+if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
 var ini_gif = await fetchJson(`https://nekos.life/api/v2/img/${command}`)
-		sendFileFromUrl(from,ini_gif.url,lang.ok(),m)
-		.catch((err) => {
-                    reply(lang.err())
-                })
-        break
-		
+sendFileFromUrl(from,ini_gif.url,lang.ok(),m)
+.catch((err) => {
+                    reply(lang.err())
+                })
+        break
+
 case 'cuddle':case 'feed':case 'foxgirl':case 'kemonomimi2':case 'woof':case 'holo2':case 'hug':case 'kiss':case 'lizard':case 'meowi':case 'neko2':case 'pat':case 'poke':case 'slap':case 'tickle':{
 if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
 reply(lang.wait())
 let to = global.api('alfa', '/api/sfw/'+command, {}, 'apikey')
 sendFileFromUrl(from, to, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
- break     
- 
+break     
+
 case 'baka':case 'smug':case 'neko_sfw':case 'hentai_gif':case 'spank':case 'blowjob':case 'cumarts':case 'eroyuri':case 'eroneko':case 'erokemonomimi':case 'erokitsune':case 'ero':case 'feet':case 'erofeet':case 'feetgif':case 'femdom':case 'futanari':case 'hentai':case 'holoero':case 'holo':case 'keta':case 'kitsune':case 'kemonomimi':case 'pussyart':case 'pussywankgif':case 'girl_solo':case 'girl_solo_gif':case 'tits':case 'trap':case 'yuri':case 'avatar2':case 'anal':case 'bj':case 'boobs':case 'classic':case 'cumsluts':case 'kuni':case 'lesbian':case 'neko':case 'neko_gif':case 'ahegao':case 'bdsm':case 'cuckold':case 'cum':case 'foot':case 'gangbang':case 'glasses':case 'jahy':case 'masturbation':case 'nsfw_neko':case 'orgy':case 'panties':case 'tentacles':case 'thighs':case 'zettai':{
 if (!db.data.chats[m.chat].nsfw) return reply('Fitur nsfw belum di aktifkan')
 reply(lang.wait())
 let to = global.api('alfa', '/api/nsfw/'+command, {}, 'apikey')
 sendFileFromUrl(from, to, lang.ok(), m)
 .catch((err) => {
-                    reply(lang.err())
-                })
+                    reply(lang.err())
+                })
 }
 break
 //sound
@@ -2063,12 +2063,12 @@ reply(lang.err())
 })
 }
 case 'coverbannerlol':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`)
+if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`)
 arg = args.join(' ')
 atas = arg.split('|')[0]
 bawah = arg.split('|')[1]
-	const style = ['jinx7','jinx-8','kassadin-5','nissfortune-5','pyke-7','riven-8','sylas-5','vayne-9','kassadin-4','qiyana-5','renataglasc','shen-5','heimerdinger-3','nunu-5','orianna-4','ziggs-4','soraka-9','soraka-10','xayah-3','zeri-2','ahri-9','akshan-2','amumu-4','annie-3','bard-3','brand-5','diana-4','draven-3','ekko-6','elise-4','ezreal-7','gwen-3','janna-6','kindred-3','leblanc-7','leona-7','lissandra-4','lux-8','lux-9','nalzahar-4','nasteryi-7','reksai-3','sett-3','sivir-6','teemo-5','tristana-6','vladimir-5','xinzhao-5','zed-7','zeri','caitlyn-6','caitlyn-7','caitlyn-8','caitlyn-9','caitlyn-10','caitlyn-11','jayce-5','kaisa-8','karma-7','thresh-6','vi-5','yasuo-8','yasuo-9','fiora-8','norgana-7','nami-5','poppy-4','syndra-5','yuumi-4','jarvaniv-6','kayn-4','kayle-5','lillia-2','norgana-6','tryndamere-3','vex','vex-2','yone-4','tristana-5','viego-2','akali-10','anivia-4','darius-5','graves-6', 'seraphine-5','shaco-2','twistedfate-4','xayah-2','zyra-5','ahri-8','ashe-6','cassiopeia-4','evelynn-6','leblanc-6','nalphite-4','warwick-5','akshan','graves-5','nissfortune-5','pyke-6','rengar-6','thresh-5','diana-3','relia-11','olaf-3','pantheon-6','pantheon-7','riven-7','vayne-8','corki-4','naokai-2','rammus-4','veigar-4','zed-6','camille-4','drmundo-3','lucian-6','nordekaiser-4','renekton-4','sejuani-5','senna-3','sylas-4','varus-5','xerath-3','damwon','galio-3','gwen','gwen-2','jax-5','jinx-6','kayle-5','sion-2','twitch-4','velkoz-4','blitzcrank-3','leona-6','lulu-3','lulu-4','lux-7','nasus-5','nunu-4','rumble-2','samira-3','aphelios-2','blitzcrank-2','caitlyn-5','garen-6','kogmaw-4','leona-5','alzahar-3','syndra-4','wukong-4','yone-3','yuumi-3','zyra-4','alistar-4','chogath-2','draven-2','fiora-7','jarvan-5','jhin-5','karma-6','nautilus-2','neeko-5','shyvana-3','viego','azir-4','diana-4','gragas-2','janna-5','kalista-3','katarina-6','ornn-2','qiyana-4','quinn-3','rell','xinzhao-4','anivia-3', 'hecarim-4','illaoi-2','jayce-4','lissandra-3','nami-4','nasus-4','nidalee-5','seraphine-4','singed-2','skarner-2','soraka-7','varus-4','vladimir-4','yorick-4','zac','riven-8','ahri-7','akali-9','evelynn-5','kaisa-7','lucian-5','seraphine','seraphine-2','seraphine-3','aatrox-6','amumu-3','lise-3','fizz-5','karma-5','zeri-2','kassadin-3','khazix-4','sivir-5','twistedfate-3','ashe-5','brand-4','leesin-5','olaf-2','sett-2','kayle-4','leblanc-5','pyke-5','samira','samira-2','viktor-2','yasuo-7','zed-5','ezreal-6','nasteryi-6','shen-4','sona-4','vi-4','yone','yone-2','ziggs-3','ahri-6','cassiopeia-3','kindred-2','riven-6','kennen-2','kogmaw-3','lillia','syndra-3','teemo-4','thresh-4','vayne-7','velkoz-3','yasuo-6','zoe-4','bard-2','gnar-3','irelia-10','nocturne-4','poppy-3','enna-2','volibear-3','volibear-4','ekko-5','fiora-6','lucian-4','pantheon-5','leblanc-4','norgana-5','urgot-4','zyra-3','jinx-5','sett','alistar-3','katarina-5','lux-5','lux-6','nasteryi-5','nalphite-3','nordekaiser-3','reksai-2','sejuani-4','tryndamere-2','xerath-2','aphelios','garen-5','jax-4','karma-4','leesin-4','leona-4','nidalee-4','rengar-5','soraka-5','soraka-6','swain-4','sylas-3','trundle-2','vladimir-3','aatrox-5','akali-8','ekko-4','qiyana-3','senna','yasuo-5','ashe-4','darius-4','hecarim-3','norgana-4','nami-3','riven-4','riven-5','ryze-3','neeko-3','eeko-4','xayahrakan','zoe-3','airi-6','noctune-3','pantheon-3','pantheon-4','rammus-3','udyr-2','veigar-3','akali-7','garen-4','irelia-8','irelia-9','jinx-4','lucian-3','pyke-4','warwick-4','caitlyn-3','caitlyn-4','kaisa-6','qiyana','qiyana-2','yasuo-4','jhin-3','karma-3','nordekaiser-2','tristana-4','nami','poppy-3','aatrox','lulu','braum','camille','karma','kindred','hecarim','norgana','renekton','kennen','akali','varus','orianna','blitzcrank','bloodmoonjhin','bloodmoontalon','arcaderiven','udyr','rumble','gnar','shaco','twitch','veigar','tryndamere','viktor','trundle','ezreal','poppy','lissandra','jax','vi','vellkoz','darius','diana','corki','sivir','ryze','azir','tristana','kled','volibear','twisterfate','anivia','zyra','quinn','nissfortune','kalista','ezrealandshen','gangplank','hextachannie','elementalistlux','xinzhao','vayne','jhin','reksai','graves','kogmaw','garen','porojinx','warwick','fizz','caitlyn','rengar','talon','nidalee','lux','jinx','thresh','wukong','sona','ahri','riven','zed','leesin','janna','katarina','leblanc','leona','fiora','lucian','shen','ziggs','yasuo','ekko','draven','ashe','ekko-5','teemo','khazix','nasteryi','brand','taliyah','nocturne','cassiopeia','xayah','rakan','syndra','irelia','leesingf','yasuobm','aurelionsol','pantheon','bard','singed','soraka','taric','naokai','xerath','gragas','jayce','riven3','nalphite','naster_yi2','chogath','zed2','darius2','talon2','kayle','drmundo','rammus','vladimir','ahri-2','karma-2','jarvan','nidalee-2','vayner-2','warwick-2','rengar-2','yasuo-3','galio','pantheon-2','jinx-2','nalzahar','olaf','shyvana','thresh-2','sion','caitlyn-2','swain','kassadin','heimerdinger','amumu','alistar','nasus','sejuani','ezreal3','nautilus','fiddlesticks','sona2','karthus','ekko2','orianna2','velkoz-2','xinzhao2','garen2','annie-2','yasuonb','rivendb','kayn','kaisa','veigar-2','vayne-3','twitch-2','tristana-2','rhaast','nalzahar-2','kayle-2','illaoi','fizz-2','elise','brand-2','syndra-2','soraka-2','nissfortune-2','hecarim-2','ezreal-2','ahri-3','yorick','z-2','tahmkench','shen-2','ornn','cassiopeia-2','renekton-2','nasus-2','jarvan-2','fiora-2','alistar-2','taric-2','zac-2','yorick-2','varus-2','nordekaiser','nasteryi-3','katarina-2','janna-2','fiora-3','evelynn','elise-2','ashe-2','annie','zoe','vi-2','vayne-4','rengar-3','jhin-2','graves-2','xayahrakan','warwick-3','nissfortune-3','lux-2','kaisa','jarvaniv','zoe-2','swain-2','sivir-2','nissfortune-4','jax-2','galio-2','varus-3','urgot','twistedfate-2','taric-3','swain-3','shen-3','rammus-2','pyke-2','pyke','nasus-3','talon','khazix-2','kayn-2','irelia-2','evelynn-2','akali-2','vladimir-2','jayce-2','janna-3','irelia-4','irelia-3','diana-2','zed-3','teemo-2','taliyah-2','shyvana-2','poppy-2','katarina-3','jax-3','garen-3','darius-3','chogath-2','aatrox-2','soraka-3','sona-3','sivir-3','kaisa-2','akali-4','akali-3','xinzhao-3','urgot-3','urgot-2','tristana-3','talon-3','sejuani-2','nunu-2','lulu-2','lucian-2','irelia-6','irelia-5','ashe-3','ziggs-2','yasuo-2','sona-4','nalphite-2','khazix-3','kayn-3','jinx-3','orianna-3','kaisa-4','kaisa-3','heimerdinger-2','ezreal-4','evelynn-3','akali-5','ahri-4','thresh-3','ryze-2','kled-2','janna-4','graves-3','fiddlesticks-2','ekko-3','amumu-2','nami-2','lulusoraka','lissandra-2','leona-3','leona-2','leblanc-2','ezrealmissfortune','camille-2','twitch-3','soraka-4','renekton-3','neeko-2','neeko','nasteryi-4','drmundo-2','akali-6','zyra-2','zilean','wukong-3','wukong-2','teemo-3','skarner','sivir-4','riven-2','quinn-2','pyke-3','nocturne-2','nidalee-3','norgana-2','leesin-3','kogmaw-2','kassadin-2','karthus-2','kalista-2','gnar-2','gangplank-2','corki-2','azir-3','azir-2','aatrox-4','aatrox-3','vi-3','vayne-6','vayne-5','tahmkench-2','sylas-2','sylas','sejuani-3','fiora-4','nunu-3','norgana-3','kayle-3','brand-3','anivia-2','ahri-5','yorick-3','rengar-4','fizz-4','fizz-3','corki-3','zed-4','rakan-2','leblanc-3','kaisa-5','jarvaniv','ivern','irelia-7','fiora-5','evelynn-4','camille-3','yuumi-2','yuumi','lux-4','lux-3','katarina-4','jayce-3','graves-4','ezreal-5']
+const style = ['jinx7','jinx-8','kassadin-5','nissfortune-5','pyke-7','riven-8','sylas-5','vayne-9','kassadin-4','qiyana-5','renataglasc','shen-5','heimerdinger-3','nunu-5','orianna-4','ziggs-4','soraka-9','soraka-10','xayah-3','zeri-2','ahri-9','akshan-2','amumu-4','annie-3','bard-3','brand-5','diana-4','draven-3','ekko-6','elise-4','ezreal-7','gwen-3','janna-6','kindred-3','leblanc-7','leona-7','lissandra-4','lux-8','lux-9','nalzahar-4','nasteryi-7','reksai-3','sett-3','sivir-6','teemo-5','tristana-6','vladimir-5','xinzhao-5','zed-7','zeri','caitlyn-6','caitlyn-7','caitlyn-8','caitlyn-9','caitlyn-10','caitlyn-11','jayce-5','kaisa-8','karma-7','thresh-6','vi-5','yasuo-8','yasuo-9','fiora-8','norgana-7','nami-5','poppy-4','syndra-5','yuumi-4','jarvaniv-6','kayn-4','kayle-5','lillia-2','norgana-6','tryndamere-3','vex','vex-2','yone-4','tristana-5','viego-2','akali-10','anivia-4','darius-5','graves-6', 'seraphine-5','shaco-2','twistedfate-4','xayah-2','zyra-5','ahri-8','ashe-6','cassiopeia-4','evelynn-6','leblanc-6','nalphite-4','warwick-5','akshan','graves-5','nissfortune-5','pyke-6','rengar-6','thresh-5','diana-3','relia-11','olaf-3','pantheon-6','pantheon-7','riven-7','vayne-8','corki-4','naokai-2','rammus-4','veigar-4','zed-6','camille-4','drmundo-3','lucian-6','nordekaiser-4','renekton-4','sejuani-5','senna-3','sylas-4','varus-5','xerath-3','damwon','galio-3','gwen','gwen-2','jax-5','jinx-6','kayle-5','sion-2','twitch-4','velkoz-4','blitzcrank-3','leona-6','lulu-3','lulu-4','lux-7','nasus-5','nunu-4','rumble-2','samira-3','aphelios-2','blitzcrank-2','caitlyn-5','garen-6','kogmaw-4','leona-5','alzahar-3','syndra-4','wukong-4','yone-3','yuumi-3','zyra-4','alistar-4','chogath-2','draven-2','fiora-7','jarvan-5','jhin-5','karma-6','nautilus-2','neeko-5','shyvana-3','viego','azir-4','diana-4','gragas-2','janna-5','kalista-3','katarina-6','ornn-2','qiyana-4','quinn-3','rell','xinzhao-4','anivia-3', 'hecarim-4','illaoi-2','jayce-4','lissandra-3','nami-4','nasus-4','nidalee-5','seraphine-4','singed-2','skarner-2','soraka-7','varus-4','vladimir-4','yorick-4','zac','riven-8','ahri-7','akali-9','evelynn-5','kaisa-7','lucian-5','seraphine','seraphine-2','seraphine-3','aatrox-6','amumu-3','lise-3','fizz-5','karma-5','zeri-2','kassadin-3','khazix-4','sivir-5','twistedfate-3','ashe-5','brand-4','leesin-5','olaf-2','sett-2','kayle-4','leblanc-5','pyke-5','samira','samira-2','viktor-2','yasuo-7','zed-5','ezreal-6','nasteryi-6','shen-4','sona-4','vi-4','yone','yone-2','ziggs-3','ahri-6','cassiopeia-3','kindred-2','riven-6','kennen-2','kogmaw-3','lillia','syndra-3','teemo-4','thresh-4','vayne-7','velkoz-3','yasuo-6','zoe-4','bard-2','gnar-3','irelia-10','nocturne-4','poppy-3','enna-2','volibear-3','volibear-4','ekko-5','fiora-6','lucian-4','pantheon-5','leblanc-4','norgana-5','urgot-4','zyra-3','jinx-5','sett','alistar-3','katarina-5','lux-5','lux-6','nasteryi-5','nalphite-3','nordekaiser-3','reksai-2','sejuani-4','tryndamere-2','xerath-2','aphelios','garen-5','jax-4','karma-4','leesin-4','leona-4','nidalee-4','rengar-5','soraka-5','soraka-6','swain-4','sylas-3','trundle-2','vladimir-3','aatrox-5','akali-8','ekko-4','qiyana-3','senna','yasuo-5','ashe-4','darius-4','hecarim-3','norgana-4','nami-3','riven-4','riven-5','ryze-3','neeko-3','eeko-4','xayahrakan','zoe-3','airi-6','noctune-3','pantheon-3','pantheon-4','rammus-3','udyr-2','veigar-3','akali-7','garen-4','irelia-8','irelia-9','jinx-4','lucian-3','pyke-4','warwick-4','caitlyn-3','caitlyn-4','kaisa-6','qiyana','qiyana-2','yasuo-4','jhin-3','karma-3','nordekaiser-2','tristana-4','nami','poppy-3','aatrox','lulu','braum','camille','karma','kindred','hecarim','norgana','renekton','kennen','akali','varus','orianna','blitzcrank','bloodmoonjhin','bloodmoontalon','arcaderiven','udyr','rumble','gnar','shaco','twitch','veigar','tryndamere','viktor','trundle','ezreal','poppy','lissandra','jax','vi','vellkoz','darius','diana','corki','sivir','ryze','azir','tristana','kled','volibear','twisterfate','anivia','zyra','quinn','nissfortune','kalista','ezrealandshen','gangplank','hextachannie','elementalistlux','xinzhao','vayne','jhin','reksai','graves','kogmaw','garen','porojinx','warwick','fizz','caitlyn','rengar','talon','nidalee','lux','jinx','thresh','wukong','sona','ahri','riven','zed','leesin','janna','katarina','leblanc','leona','fiora','lucian','shen','ziggs','yasuo','ekko','draven','ashe','ekko-5','teemo','khazix','nasteryi','brand','taliyah','nocturne','cassiopeia','xayah','rakan','syndra','irelia','leesingf','yasuobm','aurelionsol','pantheon','bard','singed','soraka','taric','naokai','xerath','gragas','jayce','riven3','nalphite','naster_yi2','chogath','zed2','darius2','talon2','kayle','drmundo','rammus','vladimir','ahri-2','karma-2','jarvan','nidalee-2','vayner-2','warwick-2','rengar-2','yasuo-3','galio','pantheon-2','jinx-2','nalzahar','olaf','shyvana','thresh-2','sion','caitlyn-2','swain','kassadin','heimerdinger','amumu','alistar','nasus','sejuani','ezreal3','nautilus','fiddlesticks','sona2','karthus','ekko2','orianna2','velkoz-2','xinzhao2','garen2','annie-2','yasuonb','rivendb','kayn','kaisa','veigar-2','vayne-3','twitch-2','tristana-2','rhaast','nalzahar-2','kayle-2','illaoi','fizz-2','elise','brand-2','syndra-2','soraka-2','nissfortune-2','hecarim-2','ezreal-2','ahri-3','yorick','z-2','tahmkench','shen-2','ornn','cassiopeia-2','renekton-2','nasus-2','jarvan-2','fiora-2','alistar-2','taric-2','zac-2','yorick-2','varus-2','nordekaiser','nasteryi-3','katarina-2','janna-2','fiora-3','evelynn','elise-2','ashe-2','annie','zoe','vi-2','vayne-4','rengar-3','jhin-2','graves-2','xayahrakan','warwick-3','nissfortune-3','lux-2','kaisa','jarvaniv','zoe-2','swain-2','sivir-2','nissfortune-4','jax-2','galio-2','varus-3','urgot','twistedfate-2','taric-3','swain-3','shen-3','rammus-2','pyke-2','pyke','nasus-3','talon','khazix-2','kayn-2','irelia-2','evelynn-2','akali-2','vladimir-2','jayce-2','janna-3','irelia-4','irelia-3','diana-2','zed-3','teemo-2','taliyah-2','shyvana-2','poppy-2','katarina-3','jax-3','garen-3','darius-3','chogath-2','aatrox-2','soraka-3','sona-3','sivir-3','kaisa-2','akali-4','akali-3','xinzhao-3','urgot-3','urgot-2','tristana-3','talon-3','sejuani-2','nunu-2','lulu-2','lucian-2','irelia-6','irelia-5','ashe-3','ziggs-2','yasuo-2','sona-4','nalphite-2','khazix-3','kayn-3','jinx-3','orianna-3','kaisa-4','kaisa-3','heimerdinger-2','ezreal-4','evelynn-3','akali-5','ahri-4','thresh-3','ryze-2','kled-2','janna-4','graves-3','fiddlesticks-2','ekko-3','amumu-2','nami-2','lulusoraka','lissandra-2','leona-3','leona-2','leblanc-2','ezrealmissfortune','camille-2','twitch-3','soraka-4','renekton-3','neeko-2','neeko','nasteryi-4','drmundo-2','akali-6','zyra-2','zilean','wukong-3','wukong-2','teemo-3','skarner','sivir-4','riven-2','quinn-2','pyke-3','nocturne-2','nidalee-3','norgana-2','leesin-3','kogmaw-2','kassadin-2','karthus-2','kalista-2','gnar-2','gangplank-2','corki-2','azir-3','azir-2','aatrox-4','aatrox-3','vi-3','vayne-6','vayne-5','tahmkench-2','sylas-2','sylas','sejuani-3','fiora-4','nunu-3','norgana-3','kayle-3','brand-3','anivia-2','ahri-5','yorick-3','rengar-4','fizz-4','fizz-3','corki-3','zed-4','rakan-2','leblanc-3','kaisa-5','jarvaniv','ivern','irelia-7','fiora-5','evelynn-4','camille-3','yuumi-2','yuumi','lux-4','lux-3','katarina-4','jayce-3','graves-4','ezreal-5']
 if (!style.includes(m2)){ 
 let listt = `*Heroes Yg Kamu Masukkan Salah*\n\n_Berikut list heroes yg benar, Total_ *${style.length}* _heroes_\n\n`
 no = 0
@@ -2076,437 +2076,437 @@ no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
 
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: atas, heroes : bawah}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
-	break
+break
 case 'pubglogomaker':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`)
-	arg = args.join(' ')
+if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`)
+arg = args.join(' ')
 atas = arg.split('|')[0]
 bawah = arg.split('|')[1]
-	const style = ['women','nen']
+const style = ['women','nen']
 if (!style.includes(m2)){ 
 let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'colorfulpubg':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`)
+if (!text) return reply(`Ex: ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['gold','green-blue','pink-yellow','green-yellow','cyan-purple','orange-red']
+const style = ['gold','green-blue','pink-yellow','green-yellow','cyan-purple','orange-red']
 if (!style.includes(m2)){ 
 let listt = `*Color Yg Kamu Masukkan Salah*\n\n_Berikut list color yg benar, Total_ *${style.length}* _color_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, color : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'astronotspace':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
+if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['anubis','dragon','duck','gorilla','panda','panther','shark','squirrel','tiger','wolf','bull','rhino','rooster','pikachu','parrot','boar','bee','hurricane','deer','horse','crocodile','pitbull']
+const style = ['anubis','dragon','duck','gorilla','panda','panther','shark','squirrel','tiger','wolf','bull','rhino','rooster','pikachu','parrot','boar','bee','hurricane','deer','horse','crocodile','pitbull']
 if (!style.includes(m2)){ 
 let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'wallpaperaov':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`)
+if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['allain','allain-2','kahlii-3','nakroth-4','preyta-2','skud-2','taara-4','valhein-4','arum-4','butterfly-6','capheny-3','elandorr-2','ilumia-3','ishar-4','lauriel-6','laville','liliana-5','nurad-8','quillen-5','rouie','rouie-2','taara-3','telannas-5','yena-4','yena-5','zata','ata','lauriel-5','qi-3','roxie-3','wukong-5','aleister-2','amily-3','arthur-3','arum-3','astrid-2','dirak','dirak-2','grakk-5','hayate-4','ishar-2','ishar-3','jinna-2','keera','keera-3','lauriel-4','nax','natalya-5','quillen-4','raz-3','richter-2','ryoma-4','telannas-4','ulen-6','valhein-3','violet-7','yorn-4','zill-3','ignis-2','lubu-2','naloch-2','sephera-3','butterfly-5','diaochan-4','elandoor','krizzix-2','nina-2','natalya-3','veera-3','violet-6','yena-2','yena-3','krizziz','nurad-7','volkath','volkath-2','airi-4','arduin-3','enzo-3','hayate-3','krixi-3','nurad-6','quillen-3','telannas-3', 'wisp-2','zip-2','gildur-2','ishar','tulen-5','amily-2','annette-3','arthur-2','butterfly-4','errol-2','joker','kahlii-2','kilgroth','lauriel-3','nurad-5','arduin-2','darcy-2','florentino-3','noren','quillen-2','ryoma-5','sephera-3','violet-5','airi-3','diaochan-3','diaochanlubu','elsuroxie','lindis-3','taara-2','toro-2','tulen-4','violet-4','wonderwoman','ybneth','zill-2','arum-2','florentino-2','liliana-4','nurad-4','yorn-3','zip','annette-2','qi','qi-2','celica','capheny-2','diaochan-2','elsu-2','ilumia-2','krixi-2','narja-2','nurad-3','preyta','telannas-2','valhein','veera-2','veres-2','yorn-2','zephys-2','airi-2','annette','baldum','butterfly-3','elsu-2','errol','fennik','lauriel-2','liliana-2','liliana-3','lindis-2','nurad-2','nakroth-2','nakroth-3','natalya-2','raz-2','ryoma-2','slimz','teemee','tulen-2','tulen-3','violet-3','wiro','wukong-3','wukong-4','zill','aleister','alice','arduin','arthur','azzenka','batman','butterfly-2','cresh','darcy', 'diaochan','enzo-2','hayate-2','jinna','lubu','nganga','violet-2','wukong-2','zanis-2','florentino','gildur','ignis','naloch','narja','nakroth','omen','payna','raz','rourke','roxie','ryoma','skud','taara','toro','valhein','veres','violet','wisp','wukong','wonderwoman','xeniel','yorn','zanis','elsu','flash','hayate','ilumia','kahlii','krixi','lauriel','liliana','lindis','nina','nurad','natalya','quillen','richter','sephera','superman','telannas','thane','airi','amily','arum','astrid','butterfly','capheny','enzo','tulen','veera','yena','ryoma-4','zephys','zuka']
+const style = ['allain','allain-2','kahlii-3','nakroth-4','preyta-2','skud-2','taara-4','valhein-4','arum-4','butterfly-6','capheny-3','elandorr-2','ilumia-3','ishar-4','lauriel-6','laville','liliana-5','nurad-8','quillen-5','rouie','rouie-2','taara-3','telannas-5','yena-4','yena-5','zata','ata','lauriel-5','qi-3','roxie-3','wukong-5','aleister-2','amily-3','arthur-3','arum-3','astrid-2','dirak','dirak-2','grakk-5','hayate-4','ishar-2','ishar-3','jinna-2','keera','keera-3','lauriel-4','nax','natalya-5','quillen-4','raz-3','richter-2','ryoma-4','telannas-4','ulen-6','valhein-3','violet-7','yorn-4','zill-3','ignis-2','lubu-2','naloch-2','sephera-3','butterfly-5','diaochan-4','elandoor','krizzix-2','nina-2','natalya-3','veera-3','violet-6','yena-2','yena-3','krizziz','nurad-7','volkath','volkath-2','airi-4','arduin-3','enzo-3','hayate-3','krixi-3','nurad-6','quillen-3','telannas-3', 'wisp-2','zip-2','gildur-2','ishar','tulen-5','amily-2','annette-3','arthur-2','butterfly-4','errol-2','joker','kahlii-2','kilgroth','lauriel-3','nurad-5','arduin-2','darcy-2','florentino-3','noren','quillen-2','ryoma-5','sephera-3','violet-5','airi-3','diaochan-3','diaochanlubu','elsuroxie','lindis-3','taara-2','toro-2','tulen-4','violet-4','wonderwoman','ybneth','zill-2','arum-2','florentino-2','liliana-4','nurad-4','yorn-3','zip','annette-2','qi','qi-2','celica','capheny-2','diaochan-2','elsu-2','ilumia-2','krixi-2','narja-2','nurad-3','preyta','telannas-2','valhein','veera-2','veres-2','yorn-2','zephys-2','airi-2','annette','baldum','butterfly-3','elsu-2','errol','fennik','lauriel-2','liliana-2','liliana-3','lindis-2','nurad-2','nakroth-2','nakroth-3','natalya-2','raz-2','ryoma-2','slimz','teemee','tulen-2','tulen-3','violet-3','wiro','wukong-3','wukong-4','zill','aleister','alice','arduin','arthur','azzenka','batman','butterfly-2','cresh','darcy', 'diaochan','enzo-2','hayate-2','jinna','lubu','nganga','violet-2','wukong-2','zanis-2','florentino','gildur','ignis','naloch','narja','nakroth','omen','payna','raz','rourke','roxie','ryoma','skud','taara','toro','valhein','veres','violet','wisp','wukong','wonderwoman','xeniel','yorn','zanis','elsu','flash','hayate','ilumia','kahlii','krixi','lauriel','liliana','lindis','nina','nurad','natalya','quillen','richter','sephera','superman','telannas','thane','airi','amily','arum','astrid','butterfly','capheny','enzo','tulen','veera','yena','ryoma-4','zephys','zuka']
 if (!style.includes(m2)){ 
 let listt = `*Heroes Yg Kamu Masukkan Salah*\n\n_Berikut list heroes yg benar, Total_ *${style.length}* _heroes_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'maketeamlogo':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
+if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['anubis','cowgirl','dragon','duck','ghost','gorilla','panda','panther','shark','squirrel','tiger','wolf','bee','crocodile','deer','pitbull','horse','hurricane','indian','assassin','boar','rapid','raven','warrior','pikachu','pubg','ninja','drift','yasuo','rhino','phoenix','bull','hornet','eagle','hunter','parrot','rooster','lion','skull','wolver','wolf','cobra','dragon','panther','owl','tiger','reaper','warrior']
+const style = ['anubis','cowgirl','dragon','duck','ghost','gorilla','panda','panther','shark','squirrel','tiger','wolf','bee','crocodile','deer','pitbull','horse','hurricane','indian','assassin','boar','rapid','raven','warrior','pikachu','pubg','ninja','drift','yasuo','rhino','phoenix','bull','hornet','eagle','hunter','parrot','rooster','lion','skull','wolver','wolf','cobra','dragon','panther','owl','tiger','reaper','warrior']
 if (!style.includes(m2)){ 
 let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'circlemarcotteam':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|lionsnake`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|lionsnake`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|lionsnake`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|lionsnake`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['panther','rhino','squirrel','unicorn','zebra','lionsnake','bear','bull','dragon','eagle','fox','griffin','hawk','lion','peacock','phoenix','tiger','wolver']
+const style = ['panther','rhino','squirrel','unicorn','zebra','lionsnake','bear','bull','dragon','eagle','fox','griffin','hawk','lion','peacock','phoenix','tiger','wolver']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'wallpaperml':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|aldous`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|aldous`)
+if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|aldous`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|aldous`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['aldous','alice-2','angela-2','argus-2','chou','chou-2','estes','eudora','eudora-2','granger','granger-2','gusion-3','hanabi-2','hanzo','helcurt','layla-3','lesley-4','lunox-2','odette-3','saber','thamuz','vexana','argus','dyrroth','esmeralda-2','kadita-2','lancelot','leomord-2','lylia','vale','valir','xborg','zhask','alice','alpha','athena','badang','balmond','bane','diggie','trunks','fanny-2','fanny-3','freya','guinevere','gusion','gusion-2','hanabi','harith','harith-2','hayabusa-2','kadita','kagura-2','kagura-3','karina-2','kimmy','layla-2','leomord','lesley-2','lesley-3','lunox','nartis','niya-2','nana','nana-2','natalia','natalia-2','odette-2','pharsa','rafaela-2','selena-2','zilong','alucard','angela','bruno','change','claude','fanny','hayabusa','hilda','hylos','kagura','karina','karrie', 'layla','lesley','lolita','ninotaur','ninsittar','niya','noskov','odette','rafaela','selena']
+const style = ['aldous','alice-2','angela-2','argus-2','chou','chou-2','estes','eudora','eudora-2','granger','granger-2','gusion-3','hanabi-2','hanzo','helcurt','layla-3','lesley-4','lunox-2','odette-3','saber','thamuz','vexana','argus','dyrroth','esmeralda-2','kadita-2','lancelot','leomord-2','lylia','vale','valir','xborg','zhask','alice','alpha','athena','badang','balmond','bane','diggie','trunks','fanny-2','fanny-3','freya','guinevere','gusion','gusion-2','hanabi','harith','harith-2','hayabusa-2','kadita','kagura-2','kagura-3','karina-2','kimmy','layla-2','leomord','lesley-2','lesley-3','lunox','nartis','niya-2','nana','nana-2','natalia','natalia-2','odette-2','pharsa','rafaela-2','selena-2','zilong','alucard','angela','bruno','change','claude','fanny','hayabusa','hilda','hylos','kagura','karina','karrie', 'layla','lesley','lolita','ninotaur','ninsittar','niya','noskov','odette','rafaela','selena']
 if (!style.includes(m2)){ 
 let listt = `*Heroes Yg Kamu Masukkan Salah*\n\n_Berikut list heroes yg benar, Total_ *${style.length}* _heroes_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'dragonballfb':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aldous`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aldous`)
+if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aldous`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aldous`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['cabba','caulifla','cooler','cumber','hit','kale','kaminoren','gokuui','xenogokuss3','xenogokuss4','xenovegeta','xenovegito','android-18','blackgoku','bulma','frieza','gotenks-2','kaio','krillinandroid-18','launch','nutenroshi-2','oldkai','oolong','pilaf','tienshinhan','trunks-3','bardock','gotenks','nutenroshi','piccolo','songoku-2','songoku-3','songoten','trunks-2','vegeta-2','vegito','krillin','najinbuu','songohan','songoku','trunks','vegeta']
+const style = ['cabba','caulifla','cooler','cumber','hit','kale','kaminoren','gokuui','xenogokuss3','xenogokuss4','xenovegeta','xenovegito','android-18','blackgoku','bulma','frieza','gotenks-2','kaio','krillinandroid-18','launch','nutenroshi-2','oldkai','oolong','pilaf','tienshinhan','trunks-3','bardock','gotenks','nutenroshi','piccolo','songoku-2','songoku-3','songoten','trunks-2','vegeta-2','vegito','krillin','najinbuu','songohan','songoku','trunks','vegeta']
 if (!style.includes(m2)){ 
 let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg benar, Total_ *${style.length}* _character_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'bannerofaov':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aphelios`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aphelios`)
+if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aphelios`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|aphelios`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['aphelios','karma','leesin-2','nidalee-2','soraka-2','soraka-3','swain','akali-4','ekko-2','qiyana','senna','yasuo-3','ahri-2','akali-3','ashe-3','caitlyn','camille','darius','draven','evelynn-2','kaisa','kayle','pantheon','rengar','sivir-2','sona','vayne-3','wukong','zoe-2','zyra','azir','garen','jinx-3','katarina-3','lux-3','nasus','nidalee','sejuani','sylas','vayner-2','vi-2','warwick-2','fiora-2','irelia-3','janna-2','jax','leesin','nasteryi-2','norgana','nami','riven-2','riven-3','talon-2','neeko','neeko-2','xayahrakan','zoe','ahri','ezreal-2','janna','jinx-2','lulu','lux-2','nissfortune','poopy','soraka','syndra','ezreal','graves','jayce','katarina-2','lux','yuumi','aatrox','akali-2','diana','elise','evelynn','jhin-2','kalista-2','kennen','pyke-2','shen','sivir','talon','twistedfate','thresh-2','yasuo-2','zilean','ashe-2','kalista','khazix','riven','riven','shyvana','thresh','zed-2','akali','ashe','ekko','fiora','irelia','irelia-2','jhin','jinx','katarina','leona','lucian','nasteryi','pyke','vayne','vi','warwick','yasuo','zed']
+const style = ['aphelios','karma','leesin-2','nidalee-2','soraka-2','soraka-3','swain','akali-4','ekko-2','qiyana','senna','yasuo-3','ahri-2','akali-3','ashe-3','caitlyn','camille','darius','draven','evelynn-2','kaisa','kayle','pantheon','rengar','sivir-2','sona','vayne-3','wukong','zoe-2','zyra','azir','garen','jinx-3','katarina-3','lux-3','nasus','nidalee','sejuani','sylas','vayner-2','vi-2','warwick-2','fiora-2','irelia-3','janna-2','jax','leesin','nasteryi-2','norgana','nami','riven-2','riven-3','talon-2','neeko','neeko-2','xayahrakan','zoe','ahri','ezreal-2','janna','jinx-2','lulu','lux-2','nissfortune','poopy','soraka','syndra','ezreal','graves','jayce','katarina-2','lux','yuumi','aatrox','akali-2','diana','elise','evelynn','jhin-2','kalista-2','kennen','pyke-2','shen','sivir','talon','twistedfate','thresh-2','yasuo-2','zilean','ashe-2','kalista','khazix','riven','riven','shyvana','thresh','zed-2','akali','ashe','ekko','fiora','irelia','irelia-2','jhin','jinx','katarina','leona','lucian','nasteryi','pyke','vayne','vi','warwick','yasuo','zed']
 if (!style.includes(m2)){ 
 let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg benar, Total_ *${style.length}* _character_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'effect3donbeach':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|beach-1`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|beach-1`)
+if (!text) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|beach-1`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|beach-1`)
 const style = ['beach-1','beach-2','beach-3','beach-4','beach-5','beach-6']
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	if (!style.includes(m2)){ 
+if (!style.includes(m2)){ 
 let listt = `*Background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg benar, Total_ *${style.length}* _background_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, background : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'cutegirlgamer':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['style-1','style-2','style-3','style-4','style-5','style-6', 'style-7','style-8','style-9', 'style-10','style-11','style-12']
+const style = ['style-1','style-2','style-3','style-4','style-5','style-6', 'style-7','style-8','style-9', 'style-10','style-11','style-12']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'footballteam':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|nau-1`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|nau-1`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|nau-1`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|nau-1`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['nau-1','nau-2','nau-3','nau-4','nau-5','nau-6']
+const style = ['nau-1','nau-2','nau-3','nau-4','nau-5','nau-6']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'beautifulshimmering':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|champion\nUsage: ${prefix + command} zeeone|aleister`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|champion\nUsage: ${prefix + command} zeeone|aleister`)
+if (!text) return reply(`Ex: ${prefix + command} nama|champion\nUsage: ${prefix + command} zeeone|aleister`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|champion\nUsage: ${prefix + command} zeeone|aleister`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['aleister','alice','butterfly','diaochan','kahlii','krixi','nina','nakroth','natalya','taara','thane','violet','zanis','zata','airi','annette','arthur','arum','astrid','elandorr','gildur','gildur','hayate','ilumia','ishar','lauriel','lindis','nurad','quillen','rouie','sephera','yena','yorn']
+const style = ['aleister','alice','butterfly','diaochan','kahlii','krixi','nina','nakroth','natalya','taara','thane','violet','zanis','zata','airi','annette','arthur','arum','astrid','elandorr','gildur','gildur','hayate','ilumia','ishar','lauriel','lindis','nurad','quillen','rouie','sephera','yena','yorn']
 if (!style.includes(m2)){ 
 let listt = `*Champion Yg Kamu Masukkan Salah*\n\n_Berikut list champion yg benar, Total_ *${style.length}* _champion_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, champion : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'pubgcutelogo':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|aleister`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|aleister`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|aleister`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|aleister`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['chicken','soldier']
+const style = ['chicken','soldier']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'elegantrotation':{
-		if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
+break
+case 'elegantrotation':{
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['bull','dragon','eagle','lion','rhino','tiger']
+const style = ['bull','dragon','eagle','lion','rhino','tiger']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'logogamingassasin':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|style-1`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['style-1','style-2','style-3','style-4','style-5','style-6','style-7','style-8','style-9','style-10','style-11','style-12','style-13','style-14','style-15','style-16','style-17','style-18','style-19','style-20','style-21','style-22','style-23','style-24']
+const style = ['style-1','style-2','style-3','style-4','style-5','style-6','style-7','style-8','style-9','style-10','style-11','style-12','style-13','style-14','style-15','style-16','style-17','style-18','style-19','style-20','style-21','style-22','style-23','style-24']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'introvideomaker':{
-		if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
+break
+case 'introvideomaker':{
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|bull`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['bull','dragon','eagle','lion','tiger','skull']
- if (!style.includes(m2)){ 
+const style = ['bull','dragon','eagle','lion','tiger','skull']
+if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {video:{ url: textpro2}, mimetype: 'video/mp4', caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'gaminglogo4fvs':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|ghost`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|ghost`)
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|ghost`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|ghost`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['girl','ghost','soldier-2','swat','woman','soldier','sniper','raccoon','rabbit','panda','chicken']
+const style = ['girl','ghost','soldier-2','swat','woman','soldier','sniper','raccoon','rabbit','panda','chicken']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'blueneon':{
-		if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
+break
+case 'blueneon':{
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['tiger','shark','dugong','bull','cheetah','lion']
+const style = ['tiger','shark','dugong','bull','cheetah','lion']
 if (!style.includes(m2)){ 
 let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total_ *${style.length}* _logo_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'metalmascot':{
-		if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
+break
+case 'metalmascot':{
+if (!text) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|logo\nUsage: ${prefix + command} zeeone|tiger`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
@@ -2516,61 +2516,61 @@ let listt = `*Logo Yg Kamu Masukkan Salah*\n\n_Berikut list logo yg benar, Total
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'anonymous':{
-	if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|style2`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|style2`)
+if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|style2`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|style2`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
-	const style = ['style1','style2','style3']
+const style = ['style1','style2','style3']
 if (!style.includes(m2)){ 
 let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
-	let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
-}}
-
-	break
-	case 'lolpentakill':{
-		if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|kassadin`)
-	if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|kassadin`)
-var mon = args.join(' ')
-var m1 = mon.split("|")[0]
-var m2 = mon.split("|")[1]
-	const style = ['jhin','syndra','olaf','nocturne','chogath','kassadin','nidalee','fiora','fiddlesticks','garen','irelia-2','janna','lissandra','ezreal','riven','nalphite','khazix','nasteryi','irelia','alista','jayce','singed','galio','velkoz','yi','yasuo','sona','nidalee-2','teemo','leesin','jinx','zed','camille','brand','warwick','rengar','vayne','leona','ashe','ezreal','annie','xerath','ahri','kayle','nissfortune','caitlyn','vi','leesin','darius','fizz','bloodyasuo','ekko','lucian','rakanandayah']
-if (!style.includes(m2)){ 
-let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
-no = 0
-for (var i = 0; i < style.length; i++) {
-no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
-}
-reply(listt)
-} else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'avatarleagueofking':{
+break
+case 'lolpentakill':{
+if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|kassadin`)
+if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|kassadin`)
+var mon = args.join(' ')
+var m1 = mon.split("|")[0]
+var m2 = mon.split("|")[1]
+const style = ['jhin','syndra','olaf','nocturne','chogath','kassadin','nidalee','fiora','fiddlesticks','garen','irelia-2','janna','lissandra','ezreal','riven','nalphite','khazix','nasteryi','irelia','alista','jayce','singed','galio','velkoz','yi','yasuo','sona','nidalee-2','teemo','leesin','jinx','zed','camille','brand','warwick','rengar','vayne','leona','ashe','ezreal','annie','xerath','ahri','kayle','nissfortune','caitlyn','vi','leesin','darius','fizz','bloodyasuo','ekko','lucian','rakanandayah']
+if (!style.includes(m2)){ 
+let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Total_ *${style.length}* _style_\n\n`
+no = 0
+for (var i = 0; i < style.length; i++) {
+no +=1
+listt += no.toString() + '.  '  + style[i] + '\n'
+}
+reply(listt)
+} else {
+reply(lang.wait())
+let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
+alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
+}}
+
+break
+case 'avatarleagueofking':{
 if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|arum-6`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|arum-6`)
 var mon = args.join(' ')
@@ -2582,17 +2582,17 @@ let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'avatarff':{
+break
+case 'avatarff':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|laura`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|laura`)
 var mon = args.join(' ')
@@ -2604,17 +2604,17 @@ let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'overwatchwallpaper':{
+break
+case 'overwatchwallpaper':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|laura`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|laura`)
 var mon = args.join(' ')
@@ -2626,17 +2626,17 @@ let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'rovwallpaperhd':{
+break
+case 'rovwallpaperhd':{
 if (!text) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|lorion`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|lorion`)
 var mon = args.join(' ')
@@ -2648,17 +2648,17 @@ let listt = `*Hero Yg Kamu Masukkan Salah*\n\n_Berikut list hero yg benar, Total
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'rovwallpaper':{
+break
+case 'rovwallpaper':{
 if (!text) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|lorion`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|lorion`)
 var mon = args.join(' ')
@@ -2670,16 +2670,16 @@ let listt = `*Avatar Yg Kamu Masukkan Salah*\n\n_Berikut list Avatar yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'beautifulgalaxylol':{
 if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|ashe-2`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|ashe-2`)
@@ -2692,17 +2692,17 @@ let listt = `*Style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'crossfirecover':{
+break
+case 'crossfirecover':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|blthefates`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|blthefates`)
 var mon = args.join(' ')
@@ -2714,17 +2714,17 @@ let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'lolwallpaper':{
+break
+case 'lolwallpaper':{
 if (!text) return reply(`Ex: ${prefix + command} nama|wallpaper\nUsage: ${prefix + command} zeeone|fizz`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|wallpaper\nUsage: ${prefix + command} zeeone|fizz`)
 var mon = args.join(' ')
@@ -2736,17 +2736,17 @@ let listt = `*Wallpaper Yg Kamu Masukkan Salah*\n\n_Berikut list walpaper yg ben
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, wallpaper : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverdota2':{
+break
+case 'coverdota2':{
 if (!text) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|fizz`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|fizz`)
 var mon = args.join(' ')
@@ -2758,17 +2758,17 @@ let listt = `*Heroes Yg Kamu Masukkan Salah*\n\n_Berikut list heroes yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverleagueofking':{
+break
+case 'coverleagueofking':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 var mon = args.join(' ')
@@ -2780,17 +2780,17 @@ let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'avatar3q360':{
+break
+case 'avatar3q360':{
 if (!text) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 var mon = args.join(' ')
@@ -2802,17 +2802,17 @@ let listt = `*Avatar Yg Kamu Masukkan Salah*\n\n_Berikut list avatar yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverofwarface':{
+break
+case 'coverofwarface':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|dieuthuyen`)
 var mon = args.join(' ')
@@ -2824,16 +2824,16 @@ let listt = `*Character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'newlolavatar':{
 if (!text) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|rammus`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|rammus`)
@@ -2846,17 +2846,17 @@ let listt = `*avatar Yg Kamu Masukkan Salah*\n\n_Berikut list avatar yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'csgocover':{
+break
+case 'csgocover':{
 if (!text) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|karambit`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|background\nUsage: ${prefix + command} zeeone|karambit`)
 var mon = args.join(' ')
@@ -2868,17 +2868,17 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, background : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverloknew':{
+break
+case 'coverloknew':{
 if (!text) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|karambit`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|karambit`)
 var mon = args.join(' ')
@@ -2890,17 +2890,17 @@ let listt = `*hero Yg Kamu Masukkan Salah*\n\n_Berikut list hero yg benar, Total
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverfblol':{
+break
+case 'coverfblol':{
 if (!text) return reply(`Ex: ${prefix + command} nama|letters\nUsage: ${prefix + command} zeeone|karambit`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|letters\nUsage: ${prefix + command} zeeone|karambit`)
 var mon = args.join(' ')
@@ -2912,17 +2912,17 @@ let listt = `*letters Yg Kamu Masukkan Salah*\n\n_Berikut list letters yg benar,
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, letters : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'overwatchcover':{
+break
+case 'overwatchcover':{
 if (!text) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|karambit`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|hero\nUsage: ${prefix + command} zeeone|karambit`)
 var mon = args.join(' ')
@@ -2934,17 +2934,17 @@ let listt = `*hero Yg Kamu Masukkan Salah*\n\n_Berikut list hero yg benar, Total
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'crossfirestyle':{
+break
+case 'crossfirestyle':{
 if (!text) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -2956,17 +2956,17 @@ let listt = `*avatar Yg Kamu Masukkan Salah*\n\n_Berikut list avatar yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'avatarlolbyname':{
+break
+case 'avatarlolbyname':{
 if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -2978,17 +2978,17 @@ let listt = `*style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'lolcoverbyname':{
+break
+case 'lolcoverbyname':{
 if (!text) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|avatar\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3000,17 +3000,17 @@ let listt = `*avatar Yg Kamu Masukkan Salah*\n\n_Berikut list avatar yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'cyberhunterfb':{
+break
+case 'cyberhunterfb':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3022,17 +3022,17 @@ let listt = `*character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coverfreefirefb':{
+break
+case 'coverfreefirefb':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3044,17 +3044,17 @@ let listt = `*character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'gamingmascot':{
+break
+case 'gamingmascot':{
 if (!text) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3066,17 +3066,17 @@ let listt = `*style Yg Kamu Masukkan Salah*\n\n_Berikut list style yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'coveronepiecefb':{
+break
+case 'coveronepiecefb':{
 if (!text) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|character\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3088,39 +3088,39 @@ let listt = `*character Yg Kamu Masukkan Salah*\n\n_Berikut list character yg be
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'bannerytcsgo':{
+break
+case 'bannerytcsgo':{
 if (!text) return reply(`Ex: ${prefix + command} nama|banner\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|banner\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
 var m2 = mon.split("|")[1]
 const style = ['banner-1','banner-2','banner-3','banner-4','banner-5','banner-6','banner-7']
-		if (!style.includes(m2)){ 
+if (!style.includes(m2)){ 
 let listt = `*banner Yg Kamu Masukkan Salah*\n\n_Berikut list banner yg benar, Total_ *${style.length}* _banner_\n\n`
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, banner : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'fbgamepubgcover':{
+break
+case 'fbgamepubgcover':{
 if (!text) return reply(`Ex: ${prefix + command} nama|template\nUsage: ${prefix + command} zeeone|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} nama|template\nUsage: ${prefix + command} zeeone|swat`)
 var mon = args.join(' ')
@@ -3132,16 +3132,16 @@ let listt = `*template Yg Kamu Masukkan Salah*\n\n_Berikut list template yg bena
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1, template : m2}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'banneroflol':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|banner\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|banner\nUsage: ${prefix + command} zeeone|youtube|swat`)
@@ -3155,17 +3155,17 @@ let listt = `*banner Yg Kamu Masukkan Salah*\n\n_Berikut list banner yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
-	let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, banner : m3}, 'apikey'))
+reply(lang.wait())
+let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, banner : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'bannerofaov2':{
+break
+case 'bannerofaov2':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|banner\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|banner\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3179,17 +3179,17 @@ let listt = `*banner Yg Kamu Masukkan Salah*\n\n_Berikut list banner yg benar, T
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, banner : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'teamlogo':{
+break
+case 'teamlogo':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3203,17 +3203,17 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'companylogo2':{
+break
+case 'companylogo2':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3227,17 +3227,17 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'companylogo':{
+break
+case 'companylogo':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3251,18 +3251,18 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'gradientlogo':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'gradientlogo':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3275,17 +3275,17 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'pencilsketch':{
+break
+case 'pencilsketch':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|icon\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|icon\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3299,17 +3299,17 @@ let listt = `*Icon Yg Kamu Masukkan Salah*\n\n_Berikut list icon yg benar, Total
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, icon : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'gunlogogaming':{
+break
+case 'gunlogogaming':{
 if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
@@ -3323,18 +3323,18 @@ let listt = `*Background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'banneroffreefire':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'banneroffreefire':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3347,18 +3347,18 @@ let listt = `*Background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'letterlogos':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'letterlogos':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3371,18 +3371,18 @@ let listt = `*Thumb Yg Kamu Masukkan Salah*\n\n_Berikut list thumb yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'bannerofoverwatch':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'bannerofoverwatch':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3395,18 +3395,18 @@ let listt = `*Background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'bannerofapex':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'bannerofapex':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3419,18 +3419,18 @@ let listt = `*Background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'bannerofpubg':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'bannerofpubg':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|background\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3443,18 +3443,18 @@ let listt = `*background Yg Kamu Masukkan Salah*\n\n_Berikut list background yg 
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'mascotstyle':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'mascotstyle':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3467,18 +3467,18 @@ let listt = `*thumb Yg Kamu Masukkan Salah*\n\n_Berikut list thumb yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'logoaccording':{
-		if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'logoaccording':{
+if (!text) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3491,18 +3491,18 @@ let listt = `*thumb Yg Kamu Masukkan Salah*\n\n_Berikut list thumb yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
-	case 'avataroverwatch':{
-		if (!text ) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
+break
+case 'avataroverwatch':{
+if (!text ) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 if (!text.includes('|')) return reply(`Ex: ${prefix + command} teks|teks2|thumb\nUsage: ${prefix + command} zeeone|youtube|swat`)
 var mon = args.join(' ')
 var m1 = mon.split("|")[0]
@@ -3515,183 +3515,183 @@ let listt = `*thumb Yg Kamu Masukkan Salah*\n\n_Berikut list thumb yg benar, Tot
 no = 0
 for (var i = 0; i < style.length; i++) {
 no +=1
-listt += no.toString() + '.  '  + style[i] + '\n'
+listt += no.toString() + '.  '  + style[i] + '\n'
 }
 reply(listt)
 } else {
-	reply(lang.wait())
+reply(lang.wait())
 let textpro2 = (api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
 alpha.sendMessage(from, {image:{ url: textpro2}, caption: lang.ok()}, {quoted:m})
 }}
 
-	break
+break
 case 'asmaulhusna':{
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
-	.then(async data =>{
-		let txt = '*Asmaul Husna*\n\n'
-		txt += `• Latin : ${data.result.latin}\n`
-		txt += `• Arabic : ${data.result.arabic}\n`
-		txt += `• Tr id : ${data.result.translation_id}\n`
-		txt += `• Tr en : ${data.result.translation_en}`
-		reply(txt)
-		})
-		.catch(e =>{
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
+.then(async data =>{
+let txt = '*Asmaul Husna*\n\n'
+txt += `• Latin : ${data.result.latin}\n`
+txt += `• Arabic : ${data.result.arabic}\n`
+txt += `• Tr id : ${data.result.translation_id}\n`
+txt += `• Tr en : ${data.result.translation_en}`
+reply(txt)
+})
+.catch(e =>{
 reply(lang.err())
 })
 }
-	break
+break
 case 'kisahnabi':{
-	if (!text) return reply(`Ex : ${prefix + command} Adam`)
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {nabi : q}, 'apikey'))
-	.then(async data =>{
-		let txt = '*Kisah Nabi*\n\n'
-		txt += `• Name : ${data.result.name}\n`
-		txt += `• Birth : ${data.result.birth}\n`
-		txt += `• Death Age : ${data.result.death_age}\n`
-		txt += `• Country : ${data.result.country_from}\n`
-		txt += `• Story : ${data.result.story}\n`
-		reply(txt)
-		})
-		.catch(e =>{
+if (!text) return reply(`Ex : ${prefix + command} Adam`)
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {nabi : q}, 'apikey'))
+.then(async data =>{
+let txt = '*Kisah Nabi*\n\n'
+txt += `• Name : ${data.result.name}\n`
+txt += `• Birth : ${data.result.birth}\n`
+txt += `• Death Age : ${data.result.death_age}\n`
+txt += `• Country : ${data.result.country_from}\n`
+txt += `• Story : ${data.result.story}\n`
+reply(txt)
+})
+.catch(e =>{
 reply(lang.err())
 })}
-	break
+break
 case 'jadwalshalat':{
-	if (!text) return reply(`Ex : ${prefix + command} Makassar`)
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {daerah : q}, 'apikey'))
-	.then(async data =>{
-		let txt = '*Jadwal Shalat *\n\n'
-		txt += `• Daerah : ${q}\n\n`
-		txt += `• Date : ${moment(new Date()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss DD/MM/YYYY')}\n`
-		txt += `• Subuh : ${data.result.today.Shubuh}\n`
-		txt += `• Zuhur : ${data.result.today.Dzuhur}\n`
-		txt += `• Ashr : ${data.result.today.Ashr}\n`
-		txt += `• Magrib : ${data.result.today.Maghrib}\n`
-		txt += `• Isya : ${data.result.today.Isya}\n`
-		reply(txt)
-		})
-		.catch(e =>{
+if (!text) return reply(`Ex : ${prefix + command} Makassar`)
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {daerah : q}, 'apikey'))
+.then(async data =>{
+let txt = '*Jadwal Shalat *\n\n'
+txt += `• Daerah : ${q}\n\n`
+txt += `• Date : ${moment(new Date()).tz('Asia/Jakarta').locale('id').format('HH:mm:ss DD/MM/YYYY')}\n`
+txt += `• Subuh : ${data.result.today.Shubuh}\n`
+txt += `• Zuhur : ${data.result.today.Dzuhur}\n`
+txt += `• Ashr : ${data.result.today.Ashr}\n`
+txt += `• Magrib : ${data.result.today.Maghrib}\n`
+txt += `• Isya : ${data.result.today.Isya}\n`
+reply(txt)
+})
+.catch(e =>{
 reply(lang.err())
 })
-	}
-	break
+}
+break
 case 'randomquran':{
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
-	.then(async data =>{
-		let short = data.result.resources
-		let txt = '*Random Quran*\n\n'
-		txt += `• Surah : ${short.nameOfSurah.short} (${short.nameOfSurah.transliteration.en})\n`
-		txt += `• Surah ke : ${short.numberOfSurah}\n`
-		txt += `• Total ayat : ${short.totalAyah}\n`
-		txt += `• Ayat ke : ${short.numberOfAyah}\n`
-		txt += `• Arab : ${short.ayah.text.arab}\n`
-		txt += `• Latin : ${short.ayah.text.transliteration.en}\n`
-		txt += `• Tr en : ${short.ayah.translation.en}\n`
-		txt += `• Tr id : ${short.ayah.translation.id}\n\n`
-		txt += `_*Audio sedang dalam di proses pengiriman*_`
-		reply(txt)
-		let buff = await getBuffer(short.ayah.audio.primary)
-		alpha.sendMessage(from, {audio: {url: short.ayah.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
-		})
-		.catch(e =>{
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
+.then(async data =>{
+let short = data.result.resources
+let txt = '*Random Quran*\n\n'
+txt += `• Surah : ${short.nameOfSurah.short} (${short.nameOfSurah.transliteration.en})\n`
+txt += `• Surah ke : ${short.numberOfSurah}\n`
+txt += `• Total ayat : ${short.totalAyah}\n`
+txt += `• Ayat ke : ${short.numberOfAyah}\n`
+txt += `• Arab : ${short.ayah.text.arab}\n`
+txt += `• Latin : ${short.ayah.text.transliteration.en}\n`
+txt += `• Tr en : ${short.ayah.translation.en}\n`
+txt += `• Tr id : ${short.ayah.translation.id}\n\n`
+txt += `_*Audio sedang dalam di proses pengiriman*_`
+reply(txt)
+let buff = await getBuffer(short.ayah.audio.primary)
+alpha.sendMessage(from, {audio: {url: short.ayah.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
+})
+.catch(e =>{
 reply(lang.err())
 })
-	}
-	break
+}
+break
 case 'randomquran2':{
-	if (!text) return reply(`Ex : ${prefix + command} Juz\nUsage: ${prefix + command} 1`)
-	if (isLimit(sender, isPremium, isCreator, isOwner, limitawal, limit)) return sendButMessage(from, lang.limit(prefix), `© ${ownername}`, [{buttonId: 'limit', buttonText: {displayText: `Check Limit`, },type: 1,}]);
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {juz : q}, 'apikey'))
-	.then(async data =>{
-		let short = data.result.resources
-		let txt = '*Random Quran*\n\n'
-		txt += `• Surah : ${short.nameOfSurah.short} (${short.nameOfSurah.transliteration.en})\n`
-		txt += `• Surah ke : ${short.numberOfSurah}\n`
-		txt += `• Total ayat : ${short.totalAyah}\n`
-		txt += `• Ayat ke : ${short.numberOfAyah}\n`
-		txt += `• Arab : ${short.ayah.text.arab}\n`
-		txt += `• Latin : ${short.ayah.text.transliteration.en}\n`
-		txt += `• Tr en : ${short.ayah.translation.en}\n`
-		txt += `• Tr id : ${short.ayah.translation.id}\n\n`
-		txt += `_*Audio sedang dalam di proses pengiriman*_`
-		reply(txt)
-		alpha.sendMessage(from, {audio: {url: short.ayah.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
-		})
-		.catch(e =>{
-			reply(lang.err())
-		})
-	}
-	break
+if (!text) return reply(`Ex : ${prefix + command} Juz\nUsage: ${prefix + command} 1`)
+if (isLimit(sender, isPremium, isCreator, isOwner, limitawal, limit)) return sendButMessage(from, lang.limit(prefix), `© ${ownername}`, [{buttonId: 'limit', buttonText: {displayText: `Check Limit`, },type: 1,}]);
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {juz : q}, 'apikey'))
+.then(async data =>{
+let short = data.result.resources
+let txt = '*Random Quran*\n\n'
+txt += `• Surah : ${short.nameOfSurah.short} (${short.nameOfSurah.transliteration.en})\n`
+txt += `• Surah ke : ${short.numberOfSurah}\n`
+txt += `• Total ayat : ${short.totalAyah}\n`
+txt += `• Ayat ke : ${short.numberOfAyah}\n`
+txt += `• Arab : ${short.ayah.text.arab}\n`
+txt += `• Latin : ${short.ayah.text.transliteration.en}\n`
+txt += `• Tr en : ${short.ayah.translation.en}\n`
+txt += `• Tr id : ${short.ayah.translation.id}\n\n`
+txt += `_*Audio sedang dalam di proses pengiriman*_`
+reply(txt)
+alpha.sendMessage(from, {audio: {url: short.ayah.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
+})
+.catch(e =>{
+reply(lang.err())
+})
+}
+break
 case 'listsurah':{
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
-	.then(async data =>{
-		listt = '*List Surah*\n\n'
-		no = 0
-		for (var i = 0; i < data.result.listsurah.length; i++) {
-		no +=1
-		listt += no.toString() + '.  '  + data.result.listsurah[i] + '\n'
-		}
-		reply(listt)
-		})
-		.catch(e =>{
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {}, 'apikey'))
+.then(async data =>{
+listt = '*List Surah*\n\n'
+no = 0
+for (var i = 0; i < data.result.listsurah.length; i++) {
+no +=1
+listt += no.toString() + '.  '  + data.result.listsurah[i] + '\n'
+}
+reply(listt)
+})
+.catch(e =>{
 reply(lang.err())
 })
-	}
-	break
+}
+break
 case 'tafsirsurah':{
-	if (!text) return reply(`Ex : ${prefix + command} surah\nUsage: ${prefix + command} Al-fatihah`)
-	var asma = await fetchJson(api('alfa', '/api/islam/'+command, {surah : q}, 'apikey'))
-	.then(async data =>{
-		let listt = '*Tafsir Surah*\n\n'
-		let no = 0
-		for (var i = 0; i < data.result.length; i++) {
-		no +=1
-		listt += `• Surah : ${data.result[i].surah}\n`
-		listt += `• Tafsir : ${data.result[i].tafsir}\n\n-----------------------------------\n\n`
-		}
-		reply(listt)
-		})
-		.catch(e =>{
+if (!text) return reply(`Ex : ${prefix + command} surah\nUsage: ${prefix + command} Al-fatihah`)
+var asma = await fetchJson(api('alfa', '/api/islam/'+command, {surah : q}, 'apikey'))
+.then(async data =>{
+let listt = '*Tafsir Surah*\n\n'
+let no = 0
+for (var i = 0; i < data.result.length; i++) {
+no +=1
+listt += `• Surah : ${data.result[i].surah}\n`
+listt += `• Tafsir : ${data.result[i].tafsir}\n\n-----------------------------------\n\n`
+}
+reply(listt)
+})
+.catch(e =>{
 reply(lang.err())
 })
-	}
-	break
+}
+break
 case 'alquranaudio':{
-	if(!text) return reply(`Ex : ${prefix + command} surah|ayat\nUsage: ${prefix + command} 1|2`)
-	var mon = args.join(' ')
-	var m1 = mon.split("|")[0]
-	var m2 = mon.split("|")[1]
-	var asma = await fetchJson(api('alfa', '/api/islam/alquran-audio2', {ayat: m2, surah : m1}, 'apikey'))
-	let short = asma.result.data
-		let listt = '*Alquran Audio*\n\n'
-		listt += `• Surah : ${short.surah.name.short} (${short.surah.name.transliteration.en})\n`
-		listt += `• Arti : ${short.surah.name.translation.en} (${short.surah.name.translation.id})\n`
-		listt += `• Surah ke : ${short.surah.number}\n`
-		listt += `• Urutan : ${short.surah.sequence}\n`
-		listt += `• Total ayat : ${short.surah.numberOfVerses}\n`
-		listt += `• Wahyu : ${short.surah.revelation.arab} (${short.surah.revelation.id})\n`
-		listt += `• Tafsir : ${short.surah.tafsir.id}\n\n~~~~~~~~~~~~~~~~~~~\n\n`
-		listt += `• Juz : ${short.meta.juz}\n`
-		listt += `• Page : ${short.meta.page}\n`
-		listt += `• Manzil : ${short.meta.manzil}\n`
-		listt += `• Ruku : ${short.meta.ruku}\n`
-		listt += `• Quarte : ${short.meta.hizbQuarter}\n`
-		listt += `• Arab : ${short.text.arab}\n`
-		listt += `• Latin : ${short.text.transliteration.en}\n`
-		listt += `• Tr en : ${short.translation.en}\n`
-		listt += `• Tr id : ${short.translation.id}\n`
-		listt += `• Tafsir short : ${short.tafsir.id.short}\n`
-		listt += `• Tafsir long : ${short.tafsir.id.long}\n\n-----------------------------------\n\n`
-		let aud_nya = await getBuffer(short.audio.primary)
-		alpha.sendMessage(from, {audio: {url: short.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
-		reply(listt)
-		.catch(e =>{
+if(!text) return reply(`Ex : ${prefix + command} surah|ayat\nUsage: ${prefix + command} 1|2`)
+var mon = args.join(' ')
+var m1 = mon.split("|")[0]
+var m2 = mon.split("|")[1]
+var asma = await fetchJson(api('alfa', '/api/islam/alquran-audio2', {ayat: m2, surah : m1}, 'apikey'))
+let short = asma.result.data
+let listt = '*Alquran Audio*\n\n'
+listt += `• Surah : ${short.surah.name.short} (${short.surah.name.transliteration.en})\n`
+listt += `• Arti : ${short.surah.name.translation.en} (${short.surah.name.translation.id})\n`
+listt += `• Surah ke : ${short.surah.number}\n`
+listt += `• Urutan : ${short.surah.sequence}\n`
+listt += `• Total ayat : ${short.surah.numberOfVerses}\n`
+listt += `• Wahyu : ${short.surah.revelation.arab} (${short.surah.revelation.id})\n`
+listt += `• Tafsir : ${short.surah.tafsir.id}\n\n~~~~~~~~~~~~~~~~~~~\n\n`
+listt += `• Juz : ${short.meta.juz}\n`
+listt += `• Page : ${short.meta.page}\n`
+listt += `• Manzil : ${short.meta.manzil}\n`
+listt += `• Ruku : ${short.meta.ruku}\n`
+listt += `• Quarte : ${short.meta.hizbQuarter}\n`
+listt += `• Arab : ${short.text.arab}\n`
+listt += `• Latin : ${short.text.transliteration.en}\n`
+listt += `• Tr en : ${short.translation.en}\n`
+listt += `• Tr id : ${short.translation.id}\n`
+listt += `• Tafsir short : ${short.tafsir.id.short}\n`
+listt += `• Tafsir long : ${short.tafsir.id.long}\n\n-----------------------------------\n\n`
+let aud_nya = await getBuffer(short.audio.primary)
+alpha.sendMessage(from, {audio: {url: short.audio.primary}, mimetype: 'audio/mpeg'}, {quoted:m})
+reply(listt)
+.catch(e =>{
 reply(lang.err())
 })
-		}
-	break
+}
+break
 case 'awoawo':case 'benedict':case 'chat':case 'dbfly':case 'dino_kuning':case 'doge':case 'gojosatoru':case 'hope_boy':case 'jisoo':case 'kr_robot':case 'kucing':case 'lonte':case 'manusia_lidi':case 'menjamet':case 'meow':case 'nicholas':case 'patrick':case 'popoci':case 'sponsbob':case 'kawan_sponsbob':case 'tyni':{
-	reply(lang.wait())
+reply(lang.wait())
 let lp = api('alfa', '/api/telegram-sticker/'+command, {}, 'apikey')
 alpha.sendImageAsSticker(m.chat, lp, m, { packname: global.packname, author: global.author })
 .catch(e =>{
@@ -3700,28 +3700,28 @@ reply(lang.err())
 }
 break
 case 'google': {
-                if (!text) return reply(`Example : ${prefix + command} Indonesia`)
-                google({'query': text}).then(res => {
-                let teks = `*Google Search*\n_Query : ${text}_\n\n`
-                for (let g of res) {
-                teks += `*Title* : ${g.title}\n`
-                teks += `*Description* : ${g.snippet}\n`
-                teks += `*Link* : ${g.link}\n\n----------------------------------------\n\n`
-                } 
-                reply(teks)
-                })
-                }
-                break
- default:
+                if (!text) return reply(`Example : ${prefix + command} Indonesia`)
+                google({'query': text}).then(res => {
+                let teks = `*Google Search*\n_Query : ${text}_\n\n`
+                for (let g of res) {
+                teks += `*Title* : ${g.title}\n`
+                teks += `*Description* : ${g.snippet}\n`
+                teks += `*Link* : ${g.link}\n\n----------------------------------------\n\n`
+                } 
+                reply(teks)
+                })
+                }
+                break
+default:
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(mess.owner)
 function Return(sul) {
 sat = JSON.stringify(sul, null, 2)
 bang = util.format(sat)
- if (sat == undefined) {
- bang = util.format(sul)
- }
- return m.reply(bang)
+if (sat == undefined) {
+bang = util.format(sul)
+}
+return m.reply(bang)
 }
 try {
 m.reply(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
@@ -3763,8 +3763,8 @@ if (stdout) return m.reply(`*${botname}*\nEXEC: ${mengtermuk}\n\n${stdout}`)
 //Anti View Once
 
 if (m.mtype == 'viewOnceMessage') {
-	if (!db.data.chats[m.chat].antionce) return
- teks = `「 *Anti ViewOnce Message* 」
+if (!db.data.chats[m.chat].antionce) return
+teks = `「 *Anti ViewOnce Message* 」
 
 ⭔ Nama : ${m.pushName}
 ⭔ User : @${m.sender.split("@")[0]}
@@ -3818,8 +3818,9 @@ console.log(err)
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-	fs.unwatchFile(file)
-	console.log(chalk.redBright(`Update ${__filename}`))
-	delete require.cache[file]
-	require(file)
+fs.unwatchFile(file)
+console.log(chalk.redBright(`Update ${__filename}`))
+delete require.cache[file]
+require(file)
 })
+
