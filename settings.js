@@ -18,19 +18,19 @@ global.autoread = false // auto read pesan / message
 //global.available = false //status online (online)
 
 // Other
-global.botname = "RAFZBOT" //namabot kalian
-global.ownername= "RAFZ" //nama kalian
-global.myweb ="https://wa.me/6285693920231?text=sewa+bot" //bebas asal jan hapus
+global.botname = "lukman¹" //namabot kalian
+global.ownername= "lukman store" //nama kalian
+global.myweb ="https://wa.me/6285778625173?text=sewa+bot" //bebas asal jan hapus
 global.youtube = "https://youtube.com/channel/UC_Obr_L3vsSLYrvZbv7k8BQ" //bebas asal jan hapus
 global.github = "https://github.com/RIFQIBOTZ" //bebas
 global.email = "rifqiistore87@gmail.com" //bebas
 global.region = "Indonesia" //bebas
-global.ownernomer = "6285693920231" // nomor wa kalian
-global.ownernomerr = "+6285693920231" //nmr wa kalian
+global.ownernomer = "6285778625173" // nomor wa kalian
+global.ownernomerr = "+6285778625173" //nmr wa kalian
 global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/donasi.jpg" // foto donasi di folder image
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
-global.owner = ["6285693920231"] //ganti agar fitur owner bisa di gunakan
+global.owner = ["6285778625173"] //ganti agar fitur owner bisa di gunakan
 global.packname = 'RAFZBOT' //sticker wm ubah
 global.author = 'RAFZ' //sticker wm ganti nama kalian
 global.sessionName = 'session'
