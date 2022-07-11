@@ -1581,7 +1581,7 @@ alpha.sendList(from, 'Mau set menu bang ?', `© ${ownername}`, salam + ' ' +  p
             break
 case 'menu':{
 if(typemenu == 'templateLocation'){
-await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/G7OS6HBcdbPBNKEGwpq4v8'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
+await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/Hnb8UOsuN4t5hSEMNTUdft'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] )
 }
 if(typemenu == 'templateTenor'){
 alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "Group Support","url": 'https://chat.whatsapp.com/KBIERXGD8wo9MzB9J2PUWl'}},{"urlButton": {"displayText": "Sewa Bot","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})

@@ -18,19 +18,19 @@ global.autoread = false // auto read pesan / message
 //global.available = false //status online (online)
 
 // Other
-global.botname = "Toru_Kaio¹" //namabot kalian
-global.ownername= "Athaya" //nama kalian
-global.myweb ="https://wa.me/62895366601524?text=sewa+bot" //bebas asal jan hapus
+global.botname = "Rexzu Botz¹" //namabot kalian
+global.ownername= "Rexzu" //nama kalian
+global.myweb ="https://wa.me/6281324636962?text=sewa+bot" //bebas asal jan hapus
 global.youtube = "https://youtube.com/channel/UC21qKoBd62ETM4m-u-ISHUA" //bebas asal jan hapus
 global.github = "https://github.com/ToruKaio" //bebas
 global.email = "athayamuluq2@gmail.com" //bebas
 global.region = "Indonesia" //bebas
-global.ownernomer = "62895366601524" // nomor wa kalian
-global.ownernomerr = "+62895366601524" //nmr wa kalian
+global.ownernomer = "6281324636962" // nomor wa kalian
+global.ownernomerr = "+6281324636962" //nmr wa kalian
 global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/donasi.jpg" // foto donasi di folder image
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
-global.owner = ["62895366601524"] //ganti agar fitur owner bisa di gunakan
+global.owner = ["6281324636962"] //ganti agar fitur owner bisa di gunakan
 global.packname = 'unoshop' //sticker wm ubah
 global.author = 'unoshop' //sticker wm ganti nama kalian
 global.sessionName = 'session'
